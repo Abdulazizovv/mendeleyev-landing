@@ -129,7 +129,7 @@
           type="button"
           class="flex h-12 w-12 shrink-0 cursor-pointer items-center justify-center rounded-xl border-0 bg-red-500 p-0 text-white transition-all duration-200 hover:bg-red-600 active:scale-95"
           @click="toggleMenu"
-          aria-label="Menyuni ochish"
+          aria-label="Menyuni oçiş"
         >
           <!-- HAMBURGER -->
           <svg v-if="!menuOpen" class="h-6 w-6" viewBox="0 0 24 24" fill="none">
@@ -180,7 +180,7 @@
           type="button"
           class="flex h-12 w-12 shrink-0 cursor-pointer items-center justify-center rounded-full border border-line bg-gray-100 p-0 text-ink transition-all duration-200 hover:bg-gray-200 active:scale-95 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
           @click="toggleDark"
-          aria-label="Rejimni almashtirish"
+          aria-label="Rejimni almaştiriş"
         >
           <!-- MOON (light mode -> click to go dark) -->
           <svg v-if="!isDark" class="h-5 w-5" viewBox="0 0 24 24" fill="none">
@@ -273,7 +273,7 @@
         <button
           type="button"
           @click="closeMenu"
-          aria-label="Menyuni yopish"
+          aria-label="Menyuni yopiş"
           class="flex h-10 w-10 cursor-pointer items-center justify-center border-0 bg-transparent p-0 text-red-950 transition hover:text-red-500 dark:text-white dark:hover:text-red-400"
         >
           <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none">

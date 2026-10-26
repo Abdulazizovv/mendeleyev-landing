@@ -28,7 +28,7 @@
             <p
               class="mt-1 text-[11px] font-semibold uppercase tracking-wide text-ink-soft dark:text-white/60"
             >
-              {{ logo.subtitle[props.lang] }}
+              {{ logo.subtitle[props.lang] || logo.subtitle.uz }}
             </p>
           </div>
         </div>
@@ -48,27 +48,27 @@ const props = defineProps({
 const logos = [
   {
     name: "Mendeleyev LC",
-    subtitle: { uz: "O'quv markazi", ru: "Учебный центр" },
+    subtitle: { uz: "Öquv markazi", ru: "Учебный центр", en: "Learning center" },
     src: "/images/logo/mendeleyev lc.webp",
   },
   {
     name: "Mendeleyev School",
-    subtitle: { uz: "O'rta ta'lim", ru: "Среднее образование" },
+    subtitle: { uz: "Örta ta'lim", ru: "Среднее образование", en: "Secondary education" },
     src: "/images/logo/mendeleyev school.webp",
   },
   {
     name: "Kokand IT Academy",
-    subtitle: { uz: "IT ta'lim", ru: "IT-образование" },
+    subtitle: { uz: "IT ta'lim", ru: "IT-образование", en: "IT education" },
     src: "/images/logo/kokand it academy.webp",
   },
   {
     name: "Kokand IT School",
-    subtitle: { uz: "IT dasturi", ru: "IT-программа" },
+    subtitle: { uz: "IT dasturi", ru: "IT-программа", en: "IT program" },
     src: "/images/logo/kokand it school.webp",
   },
   {
     name: "Yorqin school",
-    subtitle: { uz: "Yangi dastur", ru: "Новая программа" },
+    subtitle: { uz: "Yangi dastur", ru: "Новая программа", en: "New program" },
     src: "/images/logo/Yorqin school.webp",
   },
 ];

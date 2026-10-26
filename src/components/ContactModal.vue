@@ -29,7 +29,7 @@
           <button
             type="button"
             @click="close"
-            aria-label="Yopish"
+            aria-label="Yopiş"
             class="absolute right-5 top-5 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border-0 bg-gray-100 p-0 text-ink transition hover:bg-gray-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
           >
             <svg class="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none">

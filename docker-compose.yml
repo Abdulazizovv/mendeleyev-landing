@@ -13,6 +13,9 @@ services:
     restart: unless-stopped
     env_file:
       - .env.backend
+    volumes:
+      # Statistika (stats.json) qayta build/restartda yo'qolmasligi uchun
+      - landing_data:/app/data
     # Tashqi port yo'q — faqat nginx orqali
     expose:
       - "3001"
@@ -100,3 +103,6 @@ services:
 networks:
   landing_net:
     driver: bridge
+
+volumes:
+  landing_data:

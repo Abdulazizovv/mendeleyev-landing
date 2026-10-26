@@ -39,7 +39,7 @@
             >
               <img
                 :src="m.image"
-                :alt="m.name[lang]"
+                :alt="pick(m.name)"
                 class="block h-full object-cover mx-auto"
                 :style="{
                   width: m.imageWidth || '100%',
@@ -53,13 +53,13 @@
               <h4
                 class="mb-[8px] text-[24px] font-bold leading-[1.05] tracking-[-0.5px] text-[#071B4A] dark:text-white"
               >
-                {{ m.name[lang] }}
+                {{ pick(m.name) }}
               </h4>
 
               <p
                 class="text-[16px] font-normal leading-[1.25] text-[#8B91A3] dark:text-white/60"
               >
-                {{ m.role[lang] }}
+                {{ pick(m.role) }}
               </p>
             </div>
           </div>
@@ -77,6 +77,9 @@ const props = defineProps({
   lang: String,
   team: Array,
 });
+
+// Tanlangan tilda matn bo‘lmasa, o‘zbekcha (lotin) variant ko‘rsatiladi
+const pick = (obj) => obj?.[props.lang] || obj?.en || obj?.uz || "";
 
 const paused = ref(false);
 </script>

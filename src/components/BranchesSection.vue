@@ -26,20 +26,21 @@
       <div
         class="reveal grid grid-cols-3 max-[980px]:grid-cols-2 max-[640px]:grid-cols-1 gap-6"
       >
-        <button
+        <div
           v-for="b in branches"
           :key="b.id"
-          type="button"
-          class="group text-left cursor-pointer overflow-hidden rounded-[22px] border-0 bg-[#F5F6F8] p-0 transition-transform duration-200 hover:-translate-y-1 dark:bg-white/5"
+          role="button"
+          tabindex="0"
+          class="group text-left cursor-pointer overflow-hidden rounded-[22px] bg-[#F5F6F8] p-0 transition-transform duration-200 hover:-translate-y-1 dark:bg-white/5"
           @click="selected = b"
+          @keydown.enter="selected = b"
         >
           <!-- COVER -->
-          <div
-            class="relative flex h-60 items-end overflow-hidden 0 p-4"
-          >
+          <div class="relative flex h-60 items-end overflow-hidden p-4">
             <img
-              v-if="b.image"
-              :src="b.image"
+              v-if="imagesOf(b).length"
+              :key="currentImage(b)"
+              :src="currentImage(b)"
               :alt="b.name[lang]"
               class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
@@ -49,10 +50,46 @@
               class="pointer-events-none absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent"
             ></div>
 
+            <!-- ICON -->
             <span
               class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm"
               v-html="icon === 'lc' ? bookSvg() : buildingSvg()"
             ></span>
+
+            <!-- SLIDER: faqat rasm 2 ta yoki undan ko'p bo'lsa -->
+            <template v-if="imagesOf(b).length > 1">
+              <button
+                type="button"
+                aria-label="Previous image"
+                class="absolute left-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition hover:bg-black/60"
+                @click.stop="prevImage(b)"
+              >
+                <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                  <path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                aria-label="Next image"
+                class="absolute right-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition hover:bg-black/60"
+                @click.stop="nextImage(b)"
+              >
+                <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                  <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+
+              <!-- nuqtalar -->
+              <div class="absolute left-4 top-4 z-20 flex gap-1.5">
+                <span
+                  v-for="(_, i) in imagesOf(b)"
+                  :key="i"
+                  class="h-1.5 rounded-full bg-white transition-all"
+                  :class="i === indexOf(b) ? 'w-4 opacity-100' : 'w-1.5 opacity-50'"
+                ></span>
+              </div>
+            </template>
 
             <h4
               class="relative z-10 text-[19px] font-bold leading-[1.2] text-white"
@@ -69,7 +106,7 @@
               {{ b.address[lang] }}
             </p>
 
-            <div class="mt-3">
+            <div v-if="b.capacity" class="mt-3">
               <span
                 class="block text-[26px] font-extrabold leading-none text-red"
               >
@@ -102,7 +139,7 @@
               </span>
             </div>
           </div>
-        </button>
+        </div>
       </div>
     </div>
 
@@ -116,7 +153,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 import BranchDetailModal from "./BranchDetailModal.vue";
 
 defineProps({
@@ -131,6 +168,33 @@ defineProps({
 });
 
 const selected = ref(null);
+
+// har bir filial uchun joriy rasm indeksi
+const indexes = reactive({});
+
+// `images` massivi yoki eski `image` — ikkalasini qo'llaydi
+function imagesOf(b) {
+  if (Array.isArray(b.images) && b.images.length) return b.images;
+  return b.image ? [b.image] : [];
+}
+
+function indexOf(b) {
+  return indexes[b.id] ?? 0;
+}
+
+function currentImage(b) {
+  return imagesOf(b)[indexOf(b)];
+}
+
+function nextImage(b) {
+  const len = imagesOf(b).length;
+  indexes[b.id] = (indexOf(b) + 1) % len;
+}
+
+function prevImage(b) {
+  const len = imagesOf(b).length;
+  indexes[b.id] = (indexOf(b) - 1 + len) % len;
+}
 
 function hexPatternSvg() {
   return `<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">

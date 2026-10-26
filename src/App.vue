@@ -153,12 +153,12 @@ async function onSubmitForm() {
 
   if (!endpoint) {
     console.error("VITE_LEAD_API_URL is not configured");
-    alert("Server manzili sozlanmagan. .env faylini tekshiring.");
+    alert("Server manzili sozlanmagan. .env faylini tekşiring.");
     return;
   }
 
   if (!formData.name.trim() || !formData.phone.trim()) {
-    alert("Iltimos, barcha maydonlarni to‘ldiring.");
+    alert("Iltimos, barça maydonlarni töldiring.");
     return;
   }
 
@@ -176,7 +176,7 @@ async function onSubmitForm() {
 
     if (!response.ok) {
       throw new Error(
-        result?.message || "Arizani yuborishda xatolik yuz berdi."
+        result?.message || "Arizani yuborişda xatolik yuz berdi."
       );
     }
 
@@ -191,12 +191,52 @@ async function onSubmitForm() {
     console.error("Lead request failed:", error);
     alert(
       error?.message ||
-        "Arizani yuborib bo‘lmadi. Server ishlayotganini tekshiring."
+        "Arizani yuborib bölmadi. Server işlayotganini tekşiring."
     );
   }
 }
 
+function getVisitorId() {
+  try {
+    let vid = localStorage.getItem("vid");
+    if (!vid) {
+      vid =
+        typeof crypto !== "undefined" && crypto.randomUUID
+          ? crypto.randomUUID()
+          : `${Date.now().toString(36)}-${Math.random()
+              .toString(36)
+              .slice(2, 12)}`;
+      localStorage.setItem("vid", vid);
+    }
+    return vid;
+  } catch {
+    return null;
+  }
+}
+
+// Statistika: har bir brauzer sessiyasida sayt ochilishini 1 marta hisoblaydi
+function trackVisit() {
+  try {
+    if (sessionStorage.getItem("visit_counted")) return;
+    const vid = getVisitorId();
+    if (!vid) return;
+    sessionStorage.setItem("visit_counted", "1");
+
+    const leadUrl = import.meta.env.VITE_LEAD_API_URL || "/api/lead";
+    fetch(leadUrl.replace(/\/lead$/, "/visit"), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ vid }),
+      keepalive: true,
+    }).catch(() => {});
+  } catch {
+    // statistika sayt ishlashiga xalaqit bermasligi kerak
+  }
+}
+
 onMounted(() => {
+  trackVisit();
+
   requestAnimationFrame(() => {
     heroLoaded.value = true;
   });

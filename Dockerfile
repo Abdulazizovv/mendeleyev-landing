@@ -32,6 +32,10 @@ RUN npm ci --omit=dev && npm cache clean --force
 
 COPY server.js ./
 
+# Statistika fayli shu papkada saqlanadi (docker-compose da volume ulangan).
+ENV DATA_DIR=/app/data
+RUN mkdir -p /app/data && chown node:node /app/data
+
 USER node
 EXPOSE 3001
 

@@ -54,3 +54,14 @@ docker compose logs -f
   }
   ```
 - Health: `curl localhost:3010/nginx-health` va `curl localhost:3010/api/health`.
+
+## 7. Statistika (Telegram bot menyusi)
+
+Bot adminga (`ADMIN_CHAT_ID`) `/start` yuborilganda pastda **📊 Statistika** tugmasi chiqadi.
+Bosilganda Bugun / Kecha / Shu oy / Umumiy bo'yicha tashrif, noyob foydalanuvchi, ariza va
+konversiya ko'rsatiladi. **🔄 Yangilash** tugmasi xabarni joyida yangilaydi.
+
+- Tashrif `POST /api/visit` orqali, ariza esa Telegramga muvaffaqiyatli yetgach hisoblanadi.
+- Ma'lumot `data/stats.json` da (Docker: `landing_data` volume). Kunlar Toshkent vaqti (UTC+5) bo'yicha.
+- Bot `getUpdates` (long polling) ishlatadi: shu bot tokenidan boshqa joyda webhook/polling bo'lmasligi kerak.
+- Faqat `ADMIN_CHAT_ID` dagi chat javob oladi, boshqalarga bot javob bermaydi.

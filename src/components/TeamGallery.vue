@@ -2,6 +2,7 @@
   <section
     v-if="gallery.length"
     id="team-gallery"
+    ref="root"
     class="relative overflow-hidden pt-0 pb-16 max-[640px]:pb-12"
   >
     <!-- TITLE -->
@@ -178,6 +179,7 @@ const photos = [
 const AUTOPLAY_MS = 4500; // 0 qilsangiz avtomatik aylanish o'chadi
 const SIDE_SCALE = 0.78; // yon rasmlar markazdagiga nisbatan kattaligi
 const GAP = 16; // rasmlar orasidagi masofa (px)
+const VIEW_THRESHOLD = 0.35; // bo'limning qancha qismi ko'ringanda aylanish boshlanadi (0..1)
 
 /* ------------------------------------------------------------------
      MATNLAR (3 tilda)
@@ -185,10 +187,10 @@ const GAP = 16; // rasmlar orasidagi masofa (px)
 const texts = {
   uz: {
     title: "Jamoamiz hayotidan",
-    sub: "Kundalik ish, suhbatlar va birga o'tgan lahzalar.",
+    sub: "Kundalik iş, suhbatlar va birga ötgan lahzalar.",
     caption: "Mendeleyev jamoasi",
     alt: "Jamoa surati",
-    close: "Yopish",
+    close: "Yopiş",
     prev: "Oldingi",
     next: "Keyingi",
   },
@@ -222,10 +224,13 @@ const gallery = computed(() =>
 );
 
 /* ---------------- Karusel ---------------- */
+const root = ref(null);
 const stage = ref(null);
 const stageW = ref(1200);
 const current = ref(0);
 const hover = ref(false);
+const inView = ref(false); // bo'lim ekranda ko'rinyaptimi
+let io = null;
 
 const isMobile = computed(() => stageW.value < 640);
 // markazdagi (katta) rasm kengligi
@@ -277,7 +282,7 @@ function onSlideClick(i) {
   else current.value = i;
 }
 
-/* Avtomatik aylanish */
+/* Avtomatik aylanish (faqat bo'lim ko'ringanda) */
 let timer = null;
 const reduceMotion =
   typeof window !== "undefined" &&
@@ -288,13 +293,20 @@ function startAuto() {
   stopAuto();
   if (!AUTOPLAY_MS || reduceMotion) return;
   timer = setInterval(() => {
-    if (!hover.value && lb.value === null && !document.hidden) go(1);
+    if (inView.value && !hover.value && lb.value === null && !document.hidden)
+      go(1);
   }, AUTOPLAY_MS);
 }
 function stopAuto() {
   if (timer) clearInterval(timer);
   timer = null;
 }
+
+// bo'lim ko'ringanda boshlanadi, ko'rinmay qolsa to'xtaydi
+watch(inView, (v) => {
+  if (v) startAuto();
+  else stopAuto();
+});
 
 /* Barmoq bilan surish (sahna) */
 let tx = 0;
@@ -356,10 +368,22 @@ onMounted(() => {
   measure();
   window.addEventListener("resize", measure);
   window.addEventListener("keydown", onKey);
-  startAuto();
+
+  if ("IntersectionObserver" in window && root.value) {
+    io = new IntersectionObserver(
+      ([entry]) => {
+        inView.value = entry.isIntersecting;
+      },
+      { threshold: VIEW_THRESHOLD }
+    );
+    io.observe(root.value);
+  } else {
+    inView.value = true; // eski brauzerlar uchun zaxira variant
+  }
 });
 onBeforeUnmount(() => {
   stopAuto();
+  io?.disconnect();
   window.removeEventListener("resize", measure);
   window.removeEventListener("keydown", onKey);
   document.body.style.overflow = "";

@@ -2,12 +2,12 @@ export const site = {
   phone: "+998 73 200 77 88",
   phoneRaw: "+998732007788",
   address: {
-    uz: "Qo'qon shahri, Turon ko'chasi, 42-uy",
+    uz: "Qöqon şahri, Turon köçasi, 42-uy",
     ru: "г. Коканд, улица Турон, дом 42",
     en: "Kokand city, Turon street, house 42",
   },
   landmark: {
-    uz: "G'ishtli masjid yonida",
+    uz: "Ğiştli masjid yonida",
     ru: "Рядом с мечетью «Гиштли»",
     en: "Next to the Gishtli mosque",
   },
@@ -27,104 +27,103 @@ export const dict = {
     brandTag: "ta'lim markazi",
     nav: {
       advantages: "Afzalliklar",
-      courses: "Yo'nalishlar",
+      courses: "Yönalişlar",
       team: "Jamoa",
       process: "Qabul jarayoni",
       faq: "Savol-javob",
-      cta: "Bog'lanish",
+      cta: "Boğlaniş",
     },
     hero: {
       badgeStrong: "Mendeleyev LC",
-      eyebrow: " o'quv markazidan yangi loyiha:",
+      eyebrow: " öquv markazidan yangi loyiha:",
       title: "Mendeleyev tajribasiga asoslangan zamonaviy ta'lim!",
-      desc: "Bahodir Mamajonov - Mendeleyev LC, IT Academy, IT School, Yorqin School va Mendeleyev School asoschisi va ta'lim sohasida 20 yillik tajribaga ega innovatsion tashabbuskor. ",
-      ctaPrimary: "Ma'lumot olish",
+      desc: "Bahodir Mamajonov - Mendeleyev LC, IT Academy, IT School, Yorqin School va Mendeleyev School asosçisi va ta'lim sohasida 20 yillik tajribaga ega innovatsion taşabbuskor. ",
+      ctaPrimary: "Ma'lumot oliş",
       ctaSecondary: "Mendeleyev LC",
     },
-    advTitle: "Nega aynan Mendeleyev'ni tanlashingiz kerak?",
+    advTitle: "Nega aynan Mendeleyev'ni tanlaşingiz kerak?",
     advSub:
-      "Muddatidan avval talaba bo‘lish va maksimal 189 ball natijasini qo‘lga kiritish bo‘yicha — RESPUBLIKADA 1-O‘RINDA!",
-    probTitle: "Qanday muammolarga yechim beramiz?",
+      "Muddatidan avval talaba böliş va maksimal 189 ball natijasini qölga kiritiş böyiça — RESPUBLIKADA 1-ÖRINDA!",
+    probTitle: "Qanday muammolarga yeçim beramiz?",
     probSub:
-      "Biz sizning og'riqlaringizdan xabardormiz va ularga yechim berish biz uchun muhim!",
+      "Biz sizning oğriqlaringizdan xabardormiz va ularga yeçim beriş biz uçun muhim!",
     probLabelLeft: "Ota-ona",
     probLabelRight: "Mendeleyev",
     amenTitle: "Mendeleyev markaz imkoniyatlari",
     amenSub:
-      "Farzandingiz o‘qishdagi qiyinchiliklarini oson va samarali hal qilishga yordam beramiz!",
+      "Farzandingiz öqişdagi qiyinçiliklarini oson va samarali hal qilişga yordam beramiz!",
     courseTag: "Dasturlar",
-    courseTitle: "O’quv dasturlarimiz",
+    courseTitle: "Öquv dasturlarimiz",
     courseSub:
-      "Eng yaxshi ta’lim sifati, tajribali o‘qituvchilar va innovatsion yondashuv bilan farzandingiz kelajagini biz bilan yarating!",
+      "Eng yaxşi ta’lim sifati, tajribali öqituvçilar va innovatsion yondaşuv bilan farzandingiz kelajagini biz bilan yarating!",
     courseDuration: "Davomiyligi",
     coursePrice: "Narxi",
     courseCta: "Batafsil ma'lumot",
     teamTitle: "Bizning jamoa",
     teamSub:
-      "Farzandingizga sifatli ta'lim berish uchun biz eng yaxshi mutaxassislardan iborat jamoa tuzishga kirishdik",
+      "Farzandingizga sifatli ta'lim beriş uçun biz eng yaxşi mutaxassislardan iborat jamoa tuzişga kirişdik",
     procTitle: "Qabul jarayoni",
     procSub:
-      "Mendeleyev o'z farzandining kelajagi uchun befarq bo'lmagan ota-onalarni tezkor qadamlardan iborat qabul jarayoniga taklif etadi.",
-    contactTag: "Bog'lanish",
+      "Mendeleyev öz farzandining kelajagi uçun befarq bölmagan ota-onalarni tezkor qadamlardan iborat qabul jarayoniga taklif etadi.",
+    contactTag: "Boğlaniş",
     contactTitle: "Maktabimiz haqida savollaringiz bormi?",
     contactSub:
-      "Ma’lumotlaringizni yozib qoldiring va biz sizga tez orada bog'lanamiz.",
-    landmarkLabel: "Mo'ljal:",
+      "Ma’lumotlaringizni yozib qoldiring va biz sizga tez orada boğlanamiz.",
+    landmarkLabel: "Möljal:",
     form: {
       title: "Ma'lumot qoldiring",
-      lead: "Biz sizga 24 soat ichida qo'ng'iroq qilamiz.",
+      lead: "Biz sizga 24 soat içida qönğiroq qilamiz.",
       nameLabel: "Ismingiz",
       namePh: "Ism-Familiyangiz",
       phoneLabel: "Telefon raqamingiz",
-      courseLabel: "Qaysi yo'nalish qiziqtiradi?",
-      coursePh: "Yo'nalishni tanlang",
-      submit: "Ma'lumot olish",
+      courseLabel: "Qaysi yönaliş qiziqtiradi?",
+      coursePh: "Yönalişni tanlang",
+      submit: "Ma'lumot oliş",
       note: "Ma'lumotlaringiz maxfiy saqlanadi.",
       thanksTitle: "Rahmat!",
-      thanksDesc: "Arizangiz qabul qilindi. Tez orada siz bilan bog'lanamiz.",
+      thanksDesc: "Arizangiz qabul qilindi. Tez orada siz bilan boğlanamiz.",
     },
-    faqTitle: "Ko'p beriladigan savollar",
+    faqTitle: "Köp beriladigan savollar",
     faqSub:
-      "Quyida bizdan tez-tez so'raladigan savollar uchun javoblarni tayyorlab qo'ydik.",
+      "Quyida bizdan tez-tez söraladigan savollar uçun javoblarni tayyorlab qöydik.",
     results: {
       title: "Bizning natijalarimiz",
-      subtitle:
-        "O'quvchilarimizning haqiqiy yutuqlari va universitet natijalari",
-      desc: "Har bir o‘quvchimizning muvaffaqiyati — bizning asosiy maqsadimiz. Mendeleyev LC so‘nggi 3 yil davomida o‘quvchilarni oliy ta’lim muassasalariga tayyorlash va o‘qishga kiritish bo‘yicha yetakchi natijalarni qayd etib kelmoqda. Xususan, 2025-yilda 34 nafar, 2026-yilda esa 187 nafar o‘quvchimiz 189 ballik yuqori natijaga erishdi. Eng ko‘p sertifikat olish, yuqori ball natijalarini ko‘rsatish, tibbiyot oliygohlariga qabul hamda davlat granti asosida talabalikka erishish ko‘rsatkichlari bo‘yicha 1-o‘rinni egallab kelmoqda. Quyida o‘quvchilarimiz erishgan natijalar va sertifikatlarning bir qismi bilan tanishishingiz mumkin.",
+      subtitle: "Öquvçilarimizning haqiqiy yutuqlari va universitet natijalari",
+      desc: "Har bir öquvçimizning muvaffaqiyati — bizning asosiy maqsadimiz. Mendeleyev LC sönggi 3 yil davomida öquvçilarni oliy ta’lim muassasalariga tayyorlaş va öqişga kiritiş böyiça yetakçi natijalarni qayd etib kelmoqda. Xususan, 2025-yilda 34 nafar, 2026-yilda esa 187 nafar öquvçimiz 189 ballik yuqori natijaga erişdi. Eng köp sertifikat oliş, yuqori ball natijalarini körsatiş, tibbiyot oliygohlariga qabul hamda davlat granti asosida talabalikka erişiş körsatkiçlari böyiça 1-örinni egallab kelmoqda. Quyida öquvçilarimiz erişgan natijalar va sertifikatlarning bir qismi bilan tanişişingiz mumkin.",
     },
     branches: {
       schoolsTitle: "Mendeleyev maktablari",
       schoolsSub:
-        "Respublikaning turli hududlarida faoliyat yuritayotgan Mendeleyev maktab filiallari bilan tanishing.",
-      lcTitle: "Mendeleyev o'quv markazlari",
+        "Respublikaning turli hududlarida faoliyat yuritayotgan Mendeleyev maktab filiallari bilan tanişing.",
+      lcTitle: "Mendeleyev öquv markazlari",
       lcSub:
-        "Farg'ona vodiysining turli tumanlarida joylashgan Mendeleyev o'quv markazlari haqida to'liq ma'lumot oling.",
+        "Farğona vodiysining turli tumanlarida joylaşgan Mendeleyev öquv markazlari haqida töliq ma'lumot oling.",
       // capacityLabel: "Jami sig'im",
       // capacityShort: "SIG'IM",
       addressLabel: "Manzil",
-      landmarkLabel: "Mo'ljal",
+      landmarkLabel: "Möljal",
       phoneLabel: "Telefon",
       detailsBtn: "Batafsil",
       mapBtn: "Lokatsiya",
       telegramBtn: "Telegram",
       instagramBtn: "Instagram",
-      closeLabel: "Yopish",
+      closeLabel: "Yopiş",
     },
     footer: {
       about:
-        "Sifatli ta'lim orqali kuchli kelajak quruvchi zamonaviy o'quv markazi.",
-      ctaButton: "Konsultatsiya olish",
-      contactTitle: "Aloqa uchun",
-      navHome: "Bosh sahifa",
+        "Sifatli ta'lim orqali kuçli kelajak quruvçi zamonaviy öquv markazi.",
+      ctaButton: "Konsultatsiya oliş",
+      contactTitle: "Aloqa uçun",
+      navHome: "Boş sahifa",
       navAbout: "Biz haqimizda",
       navCareer: "Mendeleyev'da karyera",
       socialTitle: "Bizni ijtimoiy tarmoqlarda kuzating",
       addressLabel: "Manzil:",
       mapPlaceholder: "Xarita",
-      hoursTitle: "Ish vaqti",
-      hours: "Dushanba – Shanba: 08:00 – 17:00",
+      hoursTitle: "Iş vaqti",
+      hours: "Duşanba – Şanba: 08:00 – 17:00",
       publicOffer: "Ommaviy oferta",
-      rights: ". Barcha huquqlar himoyalangan.",
+      rights: ". Barça huquqlar himoyalangan.",
     },
   },
   ru: {
@@ -339,7 +338,7 @@ export const advantages = [
       en: "Results-driven education",
     },
     desc: {
-      uz: "O‘quvchining qiziqishi va salohiyatiga mos ravishda aniq, tabiiy yoki ijtimoiy fanlardan biriga chuqur ixtisoslashish, IT, sun’iy intellekt, robototexnika hamda SAT va IELTS bo‘yicha zamonaviy ta’lim olish.",
+      uz: "Öquvçining qiziqişi va salohiyatiga mos ravişda aniq, tabiiy yoki ijtimoiy fanlardan biriga çuqur ixtisoslaşiş, IT, sun’iy intellekt, robototexnika hamda SAT va IELTS böyiça zamonaviy ta’lim oliş.",
       ru: "Углублённая специализация по одному из точных, естественных или общественных направлений в соответствии с интересами и способностями ученика, а также современное обучение по IT, искусственному интеллекту, робототехнике, SAT и IELTS.",
       en: "In-depth specialization in one of the exact, natural or social science tracks based on the student's interests and abilities, along with modern education in IT, artificial intelligence, robotics, SAT and IELTS.",
     },
@@ -352,7 +351,7 @@ export const advantages = [
       en: "European education system",
     },
     desc: {
-      uz: "Yaponiya va Italiya ta’lim tizimlarining ilg‘or tajribalarini milliy ta’lim yondashuvi bilan uyg‘unlashtirgan zamonaviy o‘quv muhiti.",
+      uz: "Yaponiya va Italiya ta’lim tizimlarining ilğor tajribalarini milliy ta’lim yondaşuvi bilan uyğunlaştirgan zamonaviy öquv muhiti.",
       ru: "Современная образовательная среда, объединяющая передовой опыт образовательных систем Японии и Италии с национальным подходом к обучению.",
       en: "A modern learning environment combining the best practices of the Japanese and Italian education systems with a national approach to teaching.",
     },
@@ -365,7 +364,7 @@ export const advantages = [
       en: "Comfortable, modern boarding system",
     },
     desc: {
-      uz: "O‘quvchilar uchun qulay, xavfsiz va shinam yotoqxona muhiti yaratilgan. Yotoq tizimi o‘quvchining ta’lim olishi, dam olishi va mustaqil rivojlanishi uchun barcha zarur sharoitlarni o‘z ichiga oladi.",
+      uz: "Öquvçilar uçun qulay, xavfsiz va şinam yotoqxona muhiti yaratilgan. Yotoq tizimi öquvçining ta’lim olişi, dam olişi va mustaqil rivojlanişi uçun barça zarur şaroitlarni öz içiga oladi.",
       ru: "Для учеников создана удобная, безопасная и уютная среда общежития. Система общежития включает все необходимые условия для учёбы, отдыха и самостоятельного развития ученика.",
       en: "A comfortable, safe and cozy boarding environment has been created for students. The boarding system includes all the conditions needed for the student's study, rest and independent development.",
     },
@@ -380,10 +379,10 @@ export const advantages = [
     desc: {
       uz: [
         "Raqamli ta’lim muhiti va zamonaviy LMS platformasi",
-        "Gamifikatsiya orqali qiziqarli va samarali o‘quv jarayoni",
-        "O‘quvchi, ustoz va ota-onani birlashtiruvchi mobil ilova",
-        "Sun’iy intellekt yordamida o‘quvchining qobiliyat va salohiyatini aniqlash",
-        "Har bir o‘quvchi uchun individual rivojlanish yo‘nalishini shakllantirish",
+        "Gamifikatsiya orqali qiziqarli va samarali öquv jarayoni",
+        "Öquvçi, ustoz va ota-onani birlaştiruvçi mobil ilova",
+        "Sun’iy intellekt yordamida öquvçining qobiliyat va salohiyatini aniqlaş",
+        "Har bir öquvçi uçun individual rivojlaniş yönalişini şakllantiriş",
       ],
       ru: [
         "Цифровая образовательная среда и современная LMS-платформа",
@@ -411,43 +410,43 @@ export const problems = [
       en: "My child isn't getting enough knowledge at school.",
     },
     solution: {
-      uz: "Bosh maqsadimiz – sifatli ta’lim berib, barcha fanlardan poydevor bilimlarga ega, dunyoqarashi keng va mustaqil fikrlovchi yoshlarni chiqarish.",
+      uz: "Boş maqsadimiz – sifatli ta’lim berib, barça fanlardan poydevor bilimlarga ega, dunyoqaraşi keng va mustaqil fikrlovçi yoşlarni çiqariş.",
       ru: "Наша главная цель — дать качественное образование и воспитать молодёжь с прочными базовыми знаниями по всем предметам, широким кругозором и самостоятельным мышлением.",
       en: "Our main goal is to provide quality education and raise young people with a solid foundation in every subject, a broad outlook and independent thinking.",
     },
   },
   {
     problem: {
-      uz: "Farzandim qaysi fan va sohaga qiziqishini aniqlay olmayapti.",
+      uz: "Farzandim qaysi fan va sohaga qiziqişini aniqlay olmayapti.",
       ru: "Мой ребёнок не может определить, к какому предмету и сфере у него интерес.",
       en: "My child can't figure out which subject or field they're interested in.",
     },
     solution: {
-      uz: "O‘quvchining salohiyatini aniqlab, 9-sinfdan chuqurlashgan fanlarga yo‘naltiramiz va kelajak kasbini tanlashga ko‘maklashamiz.",
+      uz: "Öquvçining salohiyatini aniqlab, 9-sinfdan çuqurlaşgan fanlarga yönaltiramiz va kelajak kasbini tanlaşga kömaklaşamiz.",
       ru: "Мы выявляем потенциал ученика, начиная с 9 класса направляем его на углублённое изучение предметов и помогаем выбрать будущую профессию.",
       en: "We identify the student's potential, direct them toward in-depth subjects starting from grade 9, and help them choose a future profession.",
     },
   },
   {
     problem: {
-      uz: "Farzandimda o'ziga ishonch kam, qaror qabul qilish va muloqotda qiynaladi.",
+      uz: "Farzandimda öziga işonç kam, qaror qabul qiliş va muloqotda qiynaladi.",
       ru: "У моего ребёнка мало уверенности в себе, ему трудно принимать решения и общаться.",
       en: "My child lacks self-confidence and struggles with decision-making and communication.",
     },
     solution: {
-      uz: "O'quvchida shaxsiy va ijtimoiy ko‘nikmalarni rivojlantirishga qaratilgan 11 yillik “SkillDev” maxsus dasturimiz o‘quvchilarni katta hayotga munosib tayyorlaydi.",
+      uz: "Öquvçida şaxsiy va ijtimoiy könikmalarni rivojlantirişga qaratilgan 11 yillik “SkillDev” maxsus dasturimiz öquvçilarni katta hayotga munosib tayyorlaydi.",
       ru: "Наша специальная 11-летняя программа «SkillDev», направленная на развитие личных и социальных навыков ученика, достойно готовит его к взрослой жизни.",
       en: 'Our special 11-year "SkillDev" program, focused on developing the student\'s personal and social skills, prepares them well for adult life.',
     },
   },
   {
     problem: {
-      uz: "Farzandimni qo‘shimcha kurs va to‘garaklarga berishga majburman.",
+      uz: "Farzandimni qöşimça kurs va tögaraklarga berişga majburman.",
       ru: "Я вынужден(а) отдавать ребёнка на дополнительные курсы и кружки.",
       en: "I'm forced to send my child to extra courses and clubs.",
     },
     solution: {
-      uz: "Maktabimiz farzandingizning vaqtini unumli o‘tkazish va oliygohga tayyorlanish bo'yicha barcha ehtiyojlarini qondiradi (Chuqurlashgan fanlar, IELTS, SAT, IT, sport va boshqa to'garaklar).",
+      uz: "Maktabimiz farzandingizning vaqtini unumli ötkaziş va oliygohga tayyorlaniş böyiça barça ehtiyojlarini qondiradi (Çuqurlaşgan fanlar, IELTS, SAT, IT, sport va boşqa tögaraklar).",
       ru: "Наша школа удовлетворяет все потребности вашего ребёнка в продуктивном использовании времени и подготовке к поступлению в вуз (углублённые предметы, IELTS, SAT, IT, спорт и другие кружки).",
       en: "Our school covers all your child's needs for spending time productively and preparing for university (advanced subjects, IELTS, SAT, IT, sports and other clubs).",
     },
@@ -457,19 +456,19 @@ export const problems = [
 export const amenities = [
   {
     icon: "classroom",
-    uz: "To'liq texnologik maktab: maxsus ilova, geymifikatsiya va LMS",
+    uz: "Töliq texnologik maktab: maxsus ilova, geymifikatsiya va LMS",
     ru: "Полностью технологичная школа: специальное приложение, геймификация и LMS",
     en: "A fully tech-driven school: a dedicated app, gamification and LMS",
   },
   {
     icon: "group",
-    uz: "Kichik guruhlar (10-12 nafar)",
+    uz: "Kiçik guruhlar (10-12 nafar)",
     ru: "Небольшие группы (10-12 человек)",
     en: "Small groups (10-12 students)",
   },
   {
     icon: "security",
-    uz: "Yopiq va qo'riqlanadigan xavfsiz hudud",
+    uz: "Yopiq va qöriqlanadigan xavfsiz hudud",
     ru: "Закрытая и охраняемая безопасная территория",
     en: "A closed, guarded and secure area",
   },
@@ -481,13 +480,13 @@ export const amenities = [
   },
   {
     icon: "report",
-    uz: "Ota-onalar uchun hisobot tizimi",
+    uz: "Ota-onalar uçun hisobot tizimi",
     ru: "Система отчётности для родителей",
     en: "A reporting system for parents",
   },
   {
     icon: "pin",
-    uz: "Maktabga kelib ketishi uchun mahsus maktab aftobusi",
+    uz: "Maktabga kelib ketişi uçun mahsus maktab aftobusi",
     ru: "Специальный школьный автобус для поездок в школу и обратно",
     en: "A dedicated school bus for getting to and from school",
   },
@@ -499,7 +498,7 @@ export const amenities = [
   },
   {
     icon: "gift",
-    uz: "Bepul kirish testi va konsultatsiya",
+    uz: "Bepul kiriş testi va konsultatsiya",
     ru: "Бесплатное тестирование и консультация",
     en: "Free entrance test and consultation",
   },
@@ -514,56 +513,56 @@ export const amenities = [
 export const courses = [
   {
     name: {
-      uz: "1-4 sinflar uchun",
+      uz: "1-4 sinflar uçun",
       ru: "Для 1-4 классов",
       en: "For grades 1-4",
     },
-    level: { uz: "Boshlang'ich", ru: "Начальный", en: "Elementary" },
+    level: { uz: "Boşlanğiç", ru: "Начальный", en: "Elementary" },
     desc: {
-      uz: "O'quvchilarda ilmga muhabbat paydo qilish qatorida boshlang'ich bilimlar, hayotiy ko'nikmalar va ijtimoiy odoblarni shakllantirish jarayoni.",
+      uz: "Öquvçilarda ilmga muhabbat paydo qiliş qatorida boşlanğiç bilimlar, hayotiy könikmalar va ijtimoiy odoblarni şakllantiriş jarayoni.",
       ru: "Процесс формирования у учеников любви к науке наряду с базовыми знаниями, жизненными навыками и социальным этикетом.",
       en: "A process that builds a love of learning in students alongside basic knowledge, life skills and social etiquette.",
     },
   },
   {
     name: {
-      uz: "5-7 sinflar uchun",
+      uz: "5-7 sinflar uçun",
       ru: "Для 5-7 классов",
       en: "For grades 5-7",
     },
-    level: { uz: "O'rta", ru: "Средний", en: "Intermediate" },
+    level: { uz: "Örta", ru: "Средний", en: "Intermediate" },
     desc: {
-      uz: "Barcha fanlardan poydevor bilimlarni egallash, tanqidiy-tahliliy fikrlash va muloqot ko'nikmalarini rivojlantirish hamda xorijiy tillardan birini o'zlashtirish jarayoni.",
+      uz: "Barça fanlardan poydevor bilimlarni egallaş, tanqidiy-tahliliy fikrlaş va muloqot könikmalarini rivojlantiriş hamda xorijiy tillardan birini özlaştiriş jarayoni.",
       ru: "Процесс освоения базовых знаний по всем предметам, развития критического и аналитического мышления и коммуникативных навыков, а также изучения одного из иностранных языков.",
       en: "A process of mastering foundational knowledge in every subject, developing critical and analytical thinking and communication skills, and learning a foreign language.",
     },
   },
   {
     name: {
-      uz: "8-9 sinflar uchun",
+      uz: "8-9 sinflar uçun",
       ru: "Для 8-9 классов",
       en: "For grades 8-9",
     },
     level: {
-      uz: "Yuqori o'rta",
+      uz: "Yuqori örta",
       ru: "Средне-старший",
       en: "Upper intermediate",
     },
     desc: {
-      uz: "O'quvchining salohiyatini aniqlab, tanlangan fanlarga yo'naltirish, tanqidiy fikrlash va mustaqil izlanish ko'nikmalarini chuqurroq rivojlantirish jarayoni.",
+      uz: "Öquvçining salohiyatini aniqlab, tanlangan fanlarga yönaltiriş, tanqidiy fikrlaş va mustaqil izlaniş könikmalarini çuqurroq rivojlantiriş jarayoni.",
       ru: "Процесс выявления потенциала ученика, направления на выбранные предметы и более глубокого развития критического мышления и навыков самостоятельного поиска.",
       en: "A process of identifying the student's potential, directing them toward chosen subjects, and further developing critical thinking and independent research skills.",
     },
   },
   {
     name: {
-      uz: "10-11 sinflar uchun",
+      uz: "10-11 sinflar uçun",
       ru: "Для 10-11 классов",
       en: "For grades 10-11",
     },
     level: { uz: "Yuqori", ru: "Старший", en: "Senior" },
     desc: {
-      uz: "O'quvchining salohiyatidan kelib chiqqan holda aniq, tabiiy yoki ijtimoiy fanlardan biriga chuqurlashuv, karyerani aniqlash va oliygohga tayyorgarlik bosqichi.",
+      uz: "Öquvçining salohiyatidan kelib çiqqan holda aniq, tabiiy yoki ijtimoiy fanlardan biriga çuqurlaşuv, karyerani aniqlaş va oliygohga tayyorgarlik bosqiçi.",
       ru: "Этап углублённого изучения одного из точных, естественных или общественных предметов в зависимости от потенциала ученика, определения карьеры и подготовки к поступлению в вуз.",
       en: "A stage of in-depth study of an exact, natural or social science subject based on the student's potential, defining a career path and preparing for university.",
     },
@@ -573,7 +572,11 @@ export const courses = [
 export const team = [
   {
     initials: "EJ",
-    name: { uz: "Erkinov Jasurbek", ru: "Эркинов Жасурбек" },
+    name: {
+      uz: "Erkinov Jasurbek",
+      ru: "Эркинов Жасурбек",
+      en: "Erkinov Jasurbek",
+    },
     role: {
       uz: "IT Academy direktori",
       ru: "Директор IT Academy",
@@ -583,9 +586,13 @@ export const team = [
   },
   {
     initials: "IJ",
-    name: { uz: "Ismoilov Jumanazar", ru: "Исмоилов Жуманазар" },
+    name: {
+      uz: "Ismoilov Jumanazar",
+      ru: "Исмоилов Жуманазар",
+      en: "Ismoilov Jumanazar",
+    },
     role: {
-      uz: "Mendeleyev Bog'ish direktori",
+      uz: "Mendeleyev Boğiş direktori",
       ru: "Директор Mendeleyev Богиш",
       en: "Director of Mendeleyev Bog'ish",
     },
@@ -595,9 +602,13 @@ export const team = [
   },
   {
     initials: "NI",
-    name: { uz: "Nozimjon Ismoilov", ru: "Нозимжон Исмоилов" },
+    name: {
+      uz: "Nozimjon Ismoilov",
+      ru: "Нозимжон Исмоилов",
+      en: "Nozimjon Ismoilov",
+    },
     role: {
-      uz: "Mendeleyev Dang'ara va Tillar markazi direktori",
+      uz: "Mendeleyev Danğara va Tillar markazi direktori",
       ru: "Директор Mendeleyev Дангара и языкового центра",
       en: "Director of Mendeleyev Dang'ara and the Language Center",
     },
@@ -607,7 +618,11 @@ export const team = [
   },
   {
     initials: "HI",
-    name: { uz: "Husniddin Ismoilov", ru: "Хусниддин Исмоилов" },
+    name: {
+      uz: "Husniddin Ismoilov",
+      ru: "Хусниддин Исмоилов",
+      en: "Husniddin Ismoilov",
+    },
     role: {
       uz: "Mendeleyev Yakkatut direktori",
       ru: "Директор Mendeleyev Яккатут",
@@ -618,22 +633,44 @@ export const team = [
     imageHeight: "166px",
   },
   {
-    initials: "PO",
-    name: { uz: "Pulatov Otabek", ru: "Пулатов Отабек" },
+    initials: "EJ",
+    name: {
+      uz: "Erkinov Jasurbek",
+      ru: "Эркинов Жасурбек",
+      en: "Erkinov Jasurbek",
+    },
     role: {
-      uz: "Mendeleyev Uchko'prik direktori",
+      uz: "IT Academy direktori",
+      ru: "Директор IT Academy",
+      en: "Director of IT Academy",
+    },
+    image: "/images/team/Jasurbek Erkinov.webp",
+  },
+  {
+    initials: "XM",
+    name: {
+      uz: "Xolmirzayev Mirzajasur",
+      ru: "Холмирзаев Мирзажасур",
+      en: "Xolmirzayev Mirzajasur",
+    },
+    role: {
+      uz: "Mendeleyev Uçköprik direktori",
       ru: "Директор Mendeleyev Учкуприк",
       en: "Director of Mendeleyev Uchko'prik",
     },
-    image: "/images/team/Pulatov Otabek.webp",
+    image: "/images/team/Xolmirzayev Mirzajasur.png",
     imageWidth: "200px",
     imageHeight: "166px",
   },
   {
     initials: "RY",
-    name: { uz: "Rahimov Yorqinjon", ru: "Рахимов Ёрқинжон" },
+    name: {
+      uz: "Rahimov Yorqinjon",
+      ru: "Рахимов Ёрқинжон",
+      en: "Rahimov Yorqinjon",
+    },
     role: {
-      uz: "Mendeleyev Buvayda School va O'quv markazi direktori",
+      uz: "Mendeleyev Buvayda School va Öquv markazi direktori",
       ru: "Директор Mendeleyev Buvayda School и учебного центра",
       en: "Director of Mendeleyev Buvayda School and Learning Center",
     },
@@ -641,23 +678,33 @@ export const team = [
   },
   {
     initials: "UG",
-    name: { uz: "Usmonova Gulmiraxon", ru: "Усмонова Гулмирахон" },
+    name: {
+      uz: "Usmonova Gulmiraxon",
+      ru: "Усмонова Гулмирахон",
+      en: "Usmonova Gulmiraxon",
+    },
     role: {
-      uz: "Mendeleyev Qo'qon o'quv markazi direktori",
+      uz: "Mendeleyev Qöqon öquv markazi direktori",
       ru: "Директор учебного центра Mendeleyev Коканд",
       en: "Director of Mendeleyev Kokand Learning Center",
     },
-    image: "/images/team/Usmonova Gulmiraxon.webp",
+    image: "/images/team/Usmonova Gulmiraxon.png",
   },
   {
     initials: "NN",
-    name: { uz: "Nozimova Nasiba", ru: "Нозимова Насиба" },
+    name: {
+      uz: "Nozimova Nasiba",
+      ru: "Нозимова Насиба",
+      en: "Nozimova Nasiba",
+    },
     role: {
       uz: "Mendeleyev IT School direktori",
       ru: "Директор Mendeleyev IT School",
       en: "Director of Mendeleyev IT School",
     },
-    image: "/images/team/Nozimova Nasiba.webp",
+    image: "/images/team/Nozimova Nasiba.png",
+    imageWidth: "200px",
+    imageHeight: "166px",
   },
 ];
 
@@ -665,12 +712,12 @@ export const steps = [
   {
     icon: "building",
     title: {
-      uz: "Maktabga tashrif",
+      uz: "Maktabga taşrif",
       ru: "Визит в школу",
       en: "Visit the school",
     },
     desc: {
-      uz: "Mendeleyev jamoasi maktab hududida ota-onalarni kutib olib, ularning barcha savollariga javob berishga tayyor.",
+      uz: "Mendeleyev jamoasi maktab hududida ota-onalarni kutib olib, ularning barça savollariga javob berişga tayyor.",
       ru: "Команда Mendeleyev встречает родителей на территории школы и готова ответить на все их вопросы.",
       en: "The Mendeleyev team welcomes parents on the school grounds and is ready to answer all their questions.",
     },
@@ -678,12 +725,12 @@ export const steps = [
   {
     icon: "briefcase",
     title: {
-      uz: "Maktab bilan tanishuv",
+      uz: "Maktab bilan tanişuv",
       ru: "Знакомство со школой",
       en: "Getting to know the school",
     },
     desc: {
-      uz: "Har bir ota-onaga individual yondashuv asosida maktab va undagi barcha sharoitlar haqida ma'lumot beriladi.",
+      uz: "Har bir ota-onaga individual yondaşuv asosida maktab va undagi barça şaroitlar haqida ma'lumot beriladi.",
       ru: "Каждому родителю предоставляется информация о школе и всех условиях на основе индивидуального подхода.",
       en: "Every parent receives information about the school and all its facilities based on an individual approach.",
     },
@@ -696,7 +743,7 @@ export const steps = [
       en: "Conversation with the parent",
     },
     desc: {
-      uz: "Qabul komissiyasi a'zolari farzandini maktabimizda o'qitish qarorini qabul qilgan har bir ota-ona bilan suhbat o'tkazadi.",
+      uz: "Qabul komissiyasi a'zolari farzandini maktabimizda öqitiş qarorini qabul qilgan har bir ota-ona bilan suhbat ötkazadi.",
       ru: "Члены приёмной комиссии проводят беседу с каждым родителем, принявшим решение обучать своего ребёнка в нашей школе.",
       en: "Members of the admissions committee talk with every parent who has decided to enroll their child in our school.",
     },
@@ -709,7 +756,7 @@ export const steps = [
       en: "Conversation with a psychologist",
     },
     desc: {
-      uz: "Maktab psixologi o'quvchining Mendeleyev'da o'qish uchun tayyorlik darajasi, xulq-atvori va moslashuvchanligini baholaydi.",
+      uz: "Maktab psixologi öquvçining Mendeleyev'da öqiş uçun tayyorlik darajasi, xulq-atvori va moslaşuvçanligini baholaydi.",
       ru: "Школьный психолог оценивает готовность ученика к обучению в Mendeleyev, его поведение и адаптивность.",
       en: "The school psychologist assesses the student's readiness to study at Mendeleyev, their behavior and adaptability.",
     },
@@ -717,12 +764,12 @@ export const steps = [
   {
     icon: "messageDots",
     title: {
-      uz: "O'quvchining bilimini o'lchash",
+      uz: "Öquvçining bilimini ölçaş",
       ru: "Оценка знаний ученика",
       en: "Assessing the student's knowledge",
     },
     desc: {
-      uz: "O'quvchining poydevor fanlardan bilim darajasini aniqlash uchun osonlashtirilgan test sinovlari o'tkaziladi.",
+      uz: "Öquvçining poydevor fanlardan bilim darajasini aniqlaş uçun osonlaştirilgan test sinovlari ötkaziladi.",
       ru: "Проводится упрощённое тестирование для определения уровня знаний ученика по базовым предметам.",
       en: "A simplified test is conducted to determine the student's knowledge level in core subjects.",
     },
@@ -731,7 +778,7 @@ export const steps = [
     icon: "party",
     title: { uz: "Qabul", ru: "Зачисление", en: "Enrollment" },
     desc: {
-      uz: "Barcha bosqichlardan muvaffaqiyatli o'tgan ota-ona va o'quvchi Mendeleyev'da o'z o'rnini band qilish imkoniyatiga ega bo'ladi.",
+      uz: "Barça bosqiçlardan muvaffaqiyatli ötgan ota-ona va öquvçi Mendeleyev'da öz örnini band qiliş imkoniyatiga ega böladi.",
       ru: "Родитель и ученик, успешно прошедшие все этапы, получают возможность занять своё место в Mendeleyev.",
       en: "Parents and students who successfully complete all stages get the chance to secure their place at Mendeleyev.",
     },
@@ -749,24 +796,24 @@ export const resultsImages = [
 export const faq = [
   {
     q: {
-      uz: "Guruhlarda nechta o'quvchi bo'ladi?",
+      uz: "Guruhlarda neçta öquvçi böladi?",
       ru: "Сколько учеников в группе?",
       en: "How many students are in a group?",
     },
     a: {
-      uz: "Boshlang‘ich guruhlarda o‘quvchilar soni 10 nafardan 18 nafargacha, katta sinflarda esa 20 nafardan 25 nafargacha tashkil etadi.",
+      uz: "Boşlanğiç guruhlarda öquvçilar soni 10 nafardan 18 nafargaça, katta sinflarda esa 20 nafardan 25 nafargaça taşkil etadi.",
       ru: "В начальных группах количество учеников составляет от 10 до 18 человек, а в старших классах — от 20 до 25 человек.",
       en: "Elementary groups have 10 to 18 students, while senior classes have 20 to 25 students.",
     },
   },
   {
     q: {
-      uz: "To'lovni bo'lib to'lash imkoniyati bormi?",
+      uz: "Tölovni bölib tölaş imkoniyati bormi?",
       ru: "Есть ли возможность оплаты частями?",
       en: "Is it possible to pay in installments?",
     },
     a: {
-      uz: "Ha, oylik to'lov tizimi mavjud, shuningdek uzoq muddatli kurslar uchun chegirmalar taklif etiladi.",
+      uz: "Ha, oylik tölov tizimi mavjud, şuningdek uzoq muddatli kurslar uçun çegirmalar taklif etiladi.",
       ru: "Да, есть помесячная оплата, а также скидки для долгосрочных курсов.",
       en: "Yes, monthly payments are available, and discounts are offered for long-term courses.",
     },
@@ -778,19 +825,19 @@ export const faq = [
       en: "Is there a free trial lesson?",
     },
     a: {
-      uz: "Ha, har bir yangi o'quvchi uchun bitta bepul sinov darsi va kirish testi taqdim etiladi.",
+      uz: "Ha, har bir yangi öquvçi uçun bitta bepul sinov darsi va kiriş testi taqdim etiladi.",
       ru: "Да, каждому новому ученику предоставляется один бесплатный пробный урок и входное тестирование.",
       en: "Yes, every new student gets one free trial lesson and an entrance test.",
     },
   },
   {
     q: {
-      uz: "O'qituvchilar qanday tajribaga ega?",
+      uz: "Öqituvçilar qanday tajribaga ega?",
       ru: "Какой опыт у преподавателей?",
       en: "What experience do the teachers have?",
     },
     a: {
-      uz: "Barcha o'qituvchilarimiz yuqori ma'lumotli bo'lib, ko'pchiligi olimpiada va DTM tayyorlash tajribasiga ega.",
+      uz: "Barça öqituvçilarimiz yuqori ma'lumotli bölib, köpçiligi olimpiada va DTM tayyorlaş tajribasiga ega.",
       ru: "Все наши преподаватели высококвалифицированы, многие имеют опыт подготовки к олимпиадам и ДТМ.",
       en: "All our teachers are highly qualified, and many have experience preparing students for olympiads and the DTM (national entrance exam).",
     },
@@ -802,7 +849,7 @@ export const faq = [
       en: "How can I track my child's progress?",
     },
     a: {
-      uz: "Mobil ilova orqali davomat, nazorat ishlari natijalari va ustoz izohlarini real vaqtda ko'rishingiz mumkin.",
+      uz: "Mobil ilova orqali davomat, nazorat işlari natijalari va ustoz izohlarini real vaqtda körişingiz mumkin.",
       ru: "Через мобильное приложение вы можете в реальном времени видеть посещаемость, результаты контрольных и комментарии преподавателя.",
       en: "Through the mobile app you can see attendance, test results and teacher comments in real time.",
     },
@@ -814,19 +861,19 @@ export const schools = [
     id: "school-soy-shildir",
 
     name: {
-      uz: "Mendeleyev Soy Shildir maktabi",
+      uz: "Mendeleyev Soy Şildir maktabi",
       ru: "Школа Mendeleyev Сой Шилдир",
       en: "Mendeleyev Soy Shildir School",
     },
 
     address: {
-      uz: "Soy-shildir, Dang'ara tumani, Farg'ona viloyati, O'zbekiston",
+      uz: "Soy-şildir, Danğara tumani, Farğona viloyati, Özbekiston",
       ru: "Сой-Шилдир, Дангаринский район, Ферганская область, Узбекистан",
       en: "Soy-shildir, Dangara district, Fergana region, Uzbekistan",
     },
 
     landmark: {
-      uz: "Soy-shildir",
+      uz: "Soy-şildir",
       ru: "Сой-Шилдир",
       en: "Soy-shildir",
     },
@@ -852,19 +899,19 @@ export const schools = [
     id: "school-bogish",
 
     name: {
-      uz: "Mendeleyev Bog'ish maktabi",
+      uz: "Mendeleyev Boğiş maktabi",
       ru: "Школа Mendeleyev Богиш",
       en: "Mendeleyev Bog'ish School",
     },
 
     address: {
-      uz: "Bog'ish, Farg'ona viloyati, O'zbekiston",
+      uz: "Boğiş, Farğona viloyati, Özbekiston",
       ru: "Богиш, Ферганская область, Узбекистан",
       en: "Bog'ish, Fergana region, Uzbekistan",
     },
 
     landmark: {
-      uz: "Bog'ish",
+      uz: "Boğiş",
       ru: "Богиш",
       en: "Bog'ish",
     },
@@ -894,7 +941,7 @@ export const schools = [
       en: "Mendeleyev Yakkatut School",
     },
     address: {
-      uz: "Yakkatut tumani, Amir Temur ko'chasi, 21-uy, Farg'ona viloyati",
+      uz: "Yakkatut tumani, Amir Temur köçasi, 21-uy, Farğona viloyati",
       ru: "Яккатутский район, улица Амира Темура, дом 21, Ферганская область",
       en: "Yakkatut district, Amir Temur street, house 21, Fergana region",
     },
@@ -924,7 +971,7 @@ export const schools = [
     },
 
     address: {
-      uz: "Buvayda tumani, Farg'ona viloyati, O'zbekiston",
+      uz: "Buvayda tumani, Farğona viloyati, Özbekiston",
       ru: "Бувайдинский район, Ферганская область, Узбекистан",
       en: "Buvayda district, Fergana region, Uzbekistan",
     },
@@ -960,12 +1007,12 @@ export const schools = [
       en: "Mendeleyev IT School",
     },
     address: {
-      uz: "Qo'qon shahri, G'ishtko'prik MFY, Guzar ko'chasi, 2-uy",
+      uz: "Qöqon şahri, Ğiştköprik MFY, Guzar köçasi, 2-uy",
       ru: "г. Коканд, МСГ Гишткоприк, улица Гузар, дом 2",
       en: "Kokand city, Gishtkoprik MFY, Guzar street, house 2",
     },
     landmark: {
-      uz: "6-maktab ro'parasida",
+      uz: "6-maktab röparasida",
       ru: "Напротив школы №6",
       en: "Opposite School No. 6",
     },
@@ -981,17 +1028,17 @@ export const schools = [
   {
     id: "school-bogcha",
     name: {
-      uz: "Mendeleyev Bog'chasi",
+      uz: "Mendeleyev Boğçasi",
       ru: "Детский сад Mendeleyev",
       en: "Mendeleyev Kindergarten",
     },
     address: {
-      uz: "Qo'qon shahri, Yangi Turmush ko'chasi, 5-uy",
+      uz: "Qöqon şahri, Yangi Turmuş köçasi, 5-uy",
       ru: "г. Коканд, улица Янги Турмуш, дом 5",
       en: "Kokand city, Yangi Turmush street, house 5",
     },
     landmark: {
-      uz: "Qo'qon shahar bog'i yonida",
+      uz: "Qöqon şahar boği yonida",
       ru: "Рядом с городским парком Коканда",
       en: "Next to Kokand city park",
     },
@@ -1004,7 +1051,10 @@ export const schools = [
       "https://www.google.com/maps?q=" +
       encodeURIComponent("Qo'qon shahri, Yangi Turmush ko'chasi, 5-uy") +
       "&output=embed",
-    image: "/images/filial/mendeleyev bog'cha.png",
+    images: [
+      "/images/filial/mendeleyev bog'cha.png",
+      "/images/filial/mendeleyev bog'cha2.png",
+    ],
   },
 ];
 
@@ -1017,12 +1067,12 @@ export const learningCenters = [
       en: "Kokand IT Academy",
     },
     address: {
-      uz: "Qo'qon shahri, G'ishtko'prik MFY, Guzar ko'chasi, 2-uy",
+      uz: "Qöqon şahri, Ğiştköprik MFY, Guzar köçasi, 2-uy",
       ru: "г. Коканд, МСГ Гишткоприк, улица Гузар, дом 2",
       en: "Kokand city, Gishtkoprik MFY, Guzar street, house 2",
     },
     landmark: {
-      uz: "6-maktab ro'parasida",
+      uz: "6-maktab röparasida",
       ru: "Напротив школы №6",
       en: "Opposite School No. 6",
     },
@@ -1038,19 +1088,19 @@ export const learningCenters = [
     id: "lc-kokand",
 
     name: {
-      uz: "Mendeleyev Qo'qon",
+      uz: "Mendeleyev Qöqon",
       ru: "Mendeleyev Коканд",
       en: "Mendeleyev Kokand",
     },
 
     address: {
-      uz: "Qo'qon shahri, Farg'ona viloyati, O'zbekiston",
+      uz: "Qöqon şahri, Farğona viloyati, Özbekiston",
       ru: "г. Коканд, Ферганская область, Узбекистан",
       en: "Kokand city, Fergana region, Uzbekistan",
     },
 
     landmark: {
-      uz: "Mendeleyev Qo'qon",
+      uz: "Mendeleyev Qöqon",
       ru: "Mendeleyev Коканд",
       en: "Mendeleyev Kokand",
     },
@@ -1069,13 +1119,13 @@ export const learningCenters = [
     id: "lc-dangara",
 
     name: {
-      uz: "Mendeleyev Dang'ara",
+      uz: "Mendeleyev Danğara",
       ru: "Mendeleyev Дангара",
       en: "Mendeleyev Dang'ara",
     },
 
     address: {
-      uz: "Mendeleyev, 150500, Dang'ara tumani, Farg'ona viloyati, O'zbekiston",
+      uz: "Mendeleyev, 150500, Danğara tumani, Farğona viloyati, Özbekiston",
       ru: "Mendeleyev, 150500, Дангаринский район, Ферганская область, Узбекистан",
       en: "Mendeleyev, 150500, Dangara district, Fergana region, Uzbekistan",
     },
@@ -1104,12 +1154,12 @@ export const learningCenters = [
       en: "Language Center",
     },
     address: {
-      uz: "Farg'ona viloyati, Dang'ara tumani, Dang'ara shaharchasi",
+      uz: "Farğona viloyati, Danğara tumani, Danğara şaharçasi",
       ru: "Ферганская область, Дангаринский район, пгт Дангара",
       en: "Dang'ara town, Dang'ara district, Fergana region",
     },
     landmark: {
-      uz: "Dang'ara 1-maktab yonida",
+      uz: "Danğara 1-maktab yonida",
       ru: "Рядом со школой №1 (Дангара)",
       en: "Next to School No. 1, Dang'ara",
     },
@@ -1123,17 +1173,17 @@ export const learningCenters = [
   {
     id: "lc-uchkoprik",
     name: {
-      uz: "Mendeleyev Uchko'prik",
+      uz: "Mendeleyev Uçköprik",
       ru: "Mendeleyev Учкуприк",
       en: "Mendeleyev Uchko'prik",
     },
     address: {
-      uz: "Uchko'prik tumani markazi",
+      uz: "Uçköprik tumani markazi",
       ru: "Центр Учкуприкского района",
       en: "Uchko'prik district center",
     },
     landmark: {
-      uz: "Parhez taomlar oshxonasi ro'parasida",
+      uz: "Parhez taomlar oşxonasi röparasida",
       ru: "Напротив столовой «Parhez taomlar»",
       en: "Opposite the Parhez taomlar canteen",
     },
@@ -1154,13 +1204,13 @@ export const learningCenters = [
     },
 
     address: {
-      uz: "Istiqlol ko'chasi 6, Buvayda, Farg'ona viloyati, O'zbekiston",
+      uz: "Istiqlol köçasi 6, Buvayda, Farğona viloyati, Özbekiston",
       ru: "улица Истиклол, 6, Бувайда, Ферганская область, Узбекистан",
       en: "6 Istiqlol Street, Buvayda, Fergana Region, Uzbekistan",
     },
 
     landmark: {
-      uz: "Buvayda tuman kasalxonasi qarshisida",
+      uz: "Buvayda tuman kasalxonasi qarşisida",
       ru: "Напротив районной больницы Бувайда",
       en: "Opposite the Buvayda District Hospital",
     },
