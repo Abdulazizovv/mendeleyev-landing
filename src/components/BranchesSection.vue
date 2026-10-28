@@ -65,7 +65,13 @@
                 @click.stop="prevImage(b)"
               >
                 <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                  <path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M15 5l-7 7 7 7"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </button>
 
@@ -76,7 +82,13 @@
                 @click.stop="nextImage(b)"
               >
                 <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                  <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M9 5l7 7-7 7"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </button>
 
@@ -86,7 +98,9 @@
                   v-for="(_, i) in imagesOf(b)"
                   :key="i"
                   class="h-1.5 rounded-full bg-white transition-all"
-                  :class="i === indexOf(b) ? 'w-4 opacity-100' : 'w-1.5 opacity-50'"
+                  :class="
+                    i === indexOf(b) ? 'w-4 opacity-100' : 'w-1.5 opacity-50'
+                  "
                 ></span>
               </div>
             </template>

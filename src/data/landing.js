@@ -1023,7 +1023,7 @@ export const schools = [
     instagram: "https://instagram.com/itschool_kokand",
     mapUrl:
       "https://yandex.com/maps/10332/kokand/house/guzar_ko_chasi_2/Y0kYfwNiTEYBQFpqfXlycXRiZA==/",
-    image: "/images/filial/it academy.png",
+    image: "/images/filial/it school.png",
   },
   {
     id: "school-bogcha",
@@ -1228,6 +1228,6 @@ export const learningCenters = [
       lng: 70.3805134,
     },
 
-    image: "/images/filial/mendeleyev buvayda.png",
+    image: "/images/filial/mendeleyev buvayda2.png",
   },
 ];

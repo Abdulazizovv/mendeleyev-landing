@@ -29,9 +29,11 @@
           <div
             class="relative flex h-60 items-end overflow-hidden rounded-t-[26px] bg-linear-to-br from-gray-300 via-gray-400 to-gray-500 p-6 dark:from-white/10 dark:via-white/15 dark:to-white/20"
           >
+            <!-- JORIY RASM -->
             <img
-              v-if="branch.image"
-              :src="branch.image"
+              v-if="imagesOf(branch).length"
+              :key="currentImage(branch)"
+              :src="currentImage(branch)"
               :alt="branch.name[lang]"
               class="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
@@ -41,12 +43,63 @@
               class="pointer-events-none absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent"
             ></div>
 
+            <!-- SLIDER TUGMALARI -->
+            <template v-if="imagesOf(branch).length > 1">
+              <button
+                type="button"
+                aria-label="Previous image"
+                class="absolute left-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition hover:bg-black/60"
+                @click.stop="prevImage(branch)"
+              >
+                <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                  <path
+                    d="M15 5l-7 7 7 7"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                aria-label="Next image"
+                class="absolute right-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition hover:bg-black/60"
+                @click.stop="nextImage(branch)"
+              >
+                <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                  <path
+                    d="M9 5l7 7-7 7"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <!-- RASM INDIKATORLARI -->
+              <div class="absolute left-6 top-5 z-20 flex gap-1.5">
+                <span
+                  v-for="(_, i) in imagesOf(branch)"
+                  :key="i"
+                  class="h-1.5 rounded-full bg-white transition-all"
+                  :class="
+                    i === indexOf(branch)
+                      ? 'w-4 opacity-100'
+                      : 'w-1.5 opacity-50'
+                  "
+                ></span>
+              </div>
+            </template>
+
             <!-- CLOSE BUTTON -->
             <button
               type="button"
               @click="close"
               :aria-label="t.branches.closeLabel"
-              class="absolute right-4 top-4 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border-0 bg-black/30 p-0 text-white backdrop-blur-sm transition hover:bg-black/40"
+              class="absolute right-4 top-4 z-30 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border-0 bg-black/30 p-0 text-white backdrop-blur-sm transition hover:bg-black/40"
             >
               <svg class="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none">
                 <path
@@ -64,6 +117,7 @@
               </svg>
             </button>
 
+            <!-- FILIAL NOMI VA MANZILI -->
             <div class="relative z-10">
               <h3
                 class="text-[26px] max-[480px]:text-[21px] font-extrabold leading-[1.15] text-white"
@@ -168,7 +222,7 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, watch } from "vue";
+import { reactive, onMounted, onUnmounted, watch } from "vue";
 
 const props = defineProps({
   branch: { type: Object, default: null },
@@ -177,6 +231,41 @@ const props = defineProps({
 });
 
 const emit = defineEmits(["close"]);
+
+// Har bir filial uchun joriy rasm indeksi
+const indexes = reactive({});
+
+// images massivi yoki eski image formatini qo'llash
+function imagesOf(branch) {
+  if (Array.isArray(branch?.images) && branch.images.length) {
+    return branch.images;
+  }
+
+  return branch?.image ? [branch.image] : [];
+}
+
+function indexOf(branch) {
+  return indexes[branch.id] ?? 0;
+}
+
+function currentImage(branch) {
+  const images = imagesOf(branch);
+  return images[indexOf(branch)] ?? images[0] ?? "";
+}
+
+function nextImage(branch) {
+  const len = imagesOf(branch).length;
+  if (len < 2) return;
+
+  indexes[branch.id] = (indexOf(branch) + 1) % len;
+}
+
+function prevImage(branch) {
+  const len = imagesOf(branch).length;
+  if (len < 2) return;
+
+  indexes[branch.id] = (indexOf(branch) - 1 + len) % len;
+}
 
 function close() {
   emit("close");
