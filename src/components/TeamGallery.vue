@@ -159,20 +159,20 @@ const props = defineProps({
   ------------------------------------------------------------------ */
 const FOLDER = "/images/team/";
 const photos = [
-  "team1.JPG",
-  "team2.JPG",
-  "team3.JPG",
-  "team6.JPG",
-  "team4.JPG",
-  "team5.JPG",
-  "team7.JPG",
-  "team8.JPG",
-  "team9.JPG",
-  "team10.JPG",
-  "team11.JPG",
-  "team12.JPG",
-  "team13.JPG",
-  "team14.JPG",
+  "team1.webp",
+  "team2.webp",
+  "team3.webp",
+  "team6.webp",
+  "team4.webp",
+  "team5.webp",
+  "team7.webp",
+  "team8.webp",
+  "team9.webp",
+  "team10.webp",
+  "team11.webp",
+  "team12.webp",
+  "team13.webp",
+  "team14.webp",
 ];
 
 /* Sozlamalar */

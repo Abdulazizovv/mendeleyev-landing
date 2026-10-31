@@ -658,7 +658,7 @@ export const team = [
       ru: "Директор Mendeleyev Учкуприк",
       en: "Director of Mendeleyev Uchko'prik",
     },
-    image: "/images/team/Xolmirzayev Mirzajasur.png",
+    image: "/images/team/Xolmirzayev Mirzajasur.webp",
     imageWidth: "200px",
     imageHeight: "166px",
   },
@@ -688,7 +688,7 @@ export const team = [
       ru: "Директор учебного центра Mendeleyev Коканд",
       en: "Director of Mendeleyev Kokand Learning Center",
     },
-    image: "/images/team/Usmonova Gulmiraxon.png",
+    image: "/images/team/Usmonova Gulmiraxon.webp",
   },
   {
     initials: "NN",
@@ -702,7 +702,7 @@ export const team = [
       ru: "Директор Mendeleyev IT School",
       en: "Director of Mendeleyev IT School",
     },
-    image: "/images/team/Nozimova Nasiba.png",
+    image: "/images/team/Nozimova Nasiba.webp",
     imageWidth: "200px",
     imageHeight: "166px",
   },
@@ -786,11 +786,11 @@ export const steps = [
 ];
 
 export const resultsImages = [
-  "/images/results/result2.png",
-  "/images/results/result3.png",
-  "/images/results/result4.jpg",
-  "/images/results/result5.jpg",
-  "/images/results/result6.jpg",
+  "/images/results/result2.webp",
+  "/images/results/result3.webp",
+  "/images/results/result4.webp",
+  "/images/results/result5.webp",
+  "/images/results/result6.webp",
 ];
 
 export const faq = [
@@ -893,7 +893,7 @@ export const schools = [
       lng: 70.9360865,
     },
 
-    image: "/images/filial/mendeleyev soy shildir.JPG",
+    image: "/images/filial/mendeleyev soy shildir.webp",
   },
   {
     id: "school-bogish",
@@ -931,7 +931,7 @@ export const schools = [
       lng: 70.7896147,
     },
 
-    image: "/images/filial/mendeleyev bog'ish.JPG",
+    image: "/images/filial/mendeleyev bog'ish.webp",
   },
   {
     id: "school-yakkatut",
@@ -959,7 +959,7 @@ export const schools = [
       "https://www.google.com/maps?q=" +
       encodeURIComponent("Yakkatut tumani, Amir Temur ko'chasi, 21-uy") +
       "&output=embed",
-    image: "/images/filial/mendeleyev yakkatut.JPG",
+    image: "/images/filial/mendeleyev yakkatut.webp",
   },
   {
     id: "school-buvayda",
@@ -997,7 +997,7 @@ export const schools = [
       lng: 71.0812973,
     },
 
-    image: "/images/filial/mendeleyev buvayda.png",
+    image: "/images/filial/mendeleyev buvayda.webp",
   },
   {
     id: "school-it",
@@ -1023,7 +1023,7 @@ export const schools = [
     instagram: "https://instagram.com/itschool_kokand",
     mapUrl:
       "https://yandex.com/maps/10332/kokand/house/guzar_ko_chasi_2/Y0kYfwNiTEYBQFpqfXlycXRiZA==/",
-    image: "/images/filial/it school.png",
+    image: "/images/filial/it school.webp",
   },
   {
     id: "school-bogcha",
@@ -1052,8 +1052,8 @@ export const schools = [
       encodeURIComponent("Qo'qon shahri, Yangi Turmush ko'chasi, 5-uy") +
       "&output=embed",
     images: [
-      "/images/filial/mendeleyev bog'cha.png",
-      "/images/filial/mendeleyev bog'cha2.png",
+      "/images/filial/mendeleyev bog'cha.webp",
+      "/images/filial/mendeleyev bog'cha2.webp",
     ],
   },
 ];
@@ -1082,7 +1082,7 @@ export const learningCenters = [
     instagram: "https://instagram.com/itacademy_kokand",
     mapUrl:
       "https://yandex.com/maps/10332/kokand/house/guzar_ko_chasi_2/Y0kYfwNiTEYBQFpqfXlycXRiZA==/",
-    image: "/images/filial/it academy.png",
+    image: "/images/filial/it academy.webp",
   },
   {
     id: "lc-kokand",
@@ -1113,7 +1113,7 @@ export const learningCenters = [
 
     mapUrl: "https://maps.app.goo.gl/S5VhYxVNbngTCoTA8",
 
-    image: "/images/filial/mendeleyev qo'qon.png",
+    image: "/images/filial/mendeleyev qo'qon.webp",
   },
   {
     id: "lc-dangara",
@@ -1144,7 +1144,7 @@ export const learningCenters = [
 
     mapUrl: "https://maps.app.goo.gl/wtQJKKJUhRmnAWdM9",
 
-    image: "/images/filial/mendeleyev dang'ara.png",
+    image: "/images/filial/mendeleyev dang'ara.webp",
   },
   {
     id: "lc-tillar-markazi",
@@ -1168,7 +1168,7 @@ export const learningCenters = [
     telegram: "https://t.me/mendeleyev_markazi_NTM",
     instagram: "https://instagram.com/tillar_markazi__dangara",
     mapUrl: "https://maps.app.goo.gl/ppE4hq2RBHxCxeFy6",
-    image: "/images/filial/tillar markazi.png",
+    image: "/images/filial/tillar markazi.webp",
   },
   {
     id: "lc-uchkoprik",
@@ -1192,7 +1192,7 @@ export const learningCenters = [
     telegram: "https://t.me/mendeleyev_uchkuprik",
     instagram: "https://instagram.com/mendeleyev_uchkoprik",
     mapUrl: "https://maps.app.goo.gl/k9LGTZz8KVXPJMFd6",
-    image: "/images/filial/mendeleyev uchko'prik.png",
+    image: "/images/filial/mendeleyev uchko'prik.webp",
   },
   {
     id: "lc-buvayda",
@@ -1228,6 +1228,6 @@ export const learningCenters = [
       lng: 70.3805134,
     },
 
-    image: "/images/filial/mendeleyev buvayda2.png",
+    image: "/images/filial/mendeleyev buvayda2.webp",
   },
 ];
