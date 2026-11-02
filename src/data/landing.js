@@ -677,6 +677,20 @@ export const team = [
     image: "/images/team/Rahimov Yorqinjon.webp",
   },
   {
+    initials: "AA",
+    name: {
+      uz: "Abdusattorov Abdusalom",
+      ru: "Абдусатторов Абдусалом",
+      en: "Abdusattorov Abdusalom",
+    },
+    role: {
+      uz: "Mendeleyev Soy shildir direktori",
+      ru: "Директор Mendeleyev в Сой-Шильдире",
+      en: "Director of Mendeleyev Soy Shildir",
+    },
+    image: "/images/team/Abdusattorov Abdusalom.webp",
+  },
+  {
     initials: "UG",
     name: {
       uz: "Usmonova Gulmiraxon",
@@ -955,10 +969,7 @@ export const schools = [
     phoneRaw: "+998917447788",
     telegram: "https://t.me/mendeleyevyakkatut1",
     instagram: "https://instagram.com/mendeleyev_yakkatut",
-    mapUrl:
-      "https://www.google.com/maps?q=" +
-      encodeURIComponent("Yakkatut tumani, Amir Temur ko'chasi, 21-uy") +
-      "&output=embed",
+    mapUrl: "https://maps.app.goo.gl/cgfbTXmckgt1p2nZA",
     image: "/images/filial/mendeleyev yakkatut.webp",
   },
   {
@@ -1019,7 +1030,7 @@ export const schools = [
     // capacity: 1000,
     phone: "+998 90 401 77 88",
     phoneRaw: "+998904017788",
-    telegram: "https://t.me/mendeleyev_markazi_NTM",
+    telegram: "https://t.me/itschoolkokand",
     instagram: "https://instagram.com/itschool_kokand",
     mapUrl:
       "https://yandex.com/maps/10332/kokand/house/guzar_ko_chasi_2/Y0kYfwNiTEYBQFpqfXlycXRiZA==/",
@@ -1047,10 +1058,7 @@ export const schools = [
     phoneRaw: "+998772537788",
     telegram: "https://t.me/mendeleyevbogchasi",
     instagram: "https://instagram.com/mendeleyev_bogchasi",
-    mapUrl:
-      "https://www.google.com/maps?q=" +
-      encodeURIComponent("Qo'qon shahri, Yangi Turmush ko'chasi, 5-uy") +
-      "&output=embed",
+    mapUrl: "https://maps.app.goo.gl/22UU6e7rMUFYNLmE6",
     images: [
       "/images/filial/mendeleyev bog'cha.webp",
       "/images/filial/mendeleyev bog'cha2.webp",
@@ -1165,7 +1173,7 @@ export const learningCenters = [
     },
     phone: "+998 90 233 77 88",
     phoneRaw: "+998902337788",
-    telegram: "https://t.me/mendeleyev_markazi_NTM",
+    telegram: "https://t.me/mendeleyev_tillar",
     instagram: "https://instagram.com/tillar_markazi__dangara",
     mapUrl: "https://maps.app.goo.gl/ppE4hq2RBHxCxeFy6",
     image: "/images/filial/tillar markazi.webp",
@@ -1191,7 +1199,7 @@ export const learningCenters = [
     phoneRaw: "+998912887788",
     telegram: "https://t.me/mendeleyev_uchkuprik",
     instagram: "https://instagram.com/mendeleyev_uchkoprik",
-    mapUrl: "https://maps.app.goo.gl/k9LGTZz8KVXPJMFd6",
+    mapUrl: "https://maps.app.goo.gl/gtHssagrFatNnTH98",
     image: "/images/filial/mendeleyev uchko'prik.webp",
   },
   {
@@ -1218,7 +1226,7 @@ export const learningCenters = [
     phone: "+998 99 320 77 88",
     phoneRaw: "+998993207788",
 
-    telegram: "https://t.me/mendeleyev_markazi_NTM",
+    telegram: "https://t.me/mendeleyevbuvayda",
     instagram: "https://instagram.com/mendeleyev_buvayda",
 
     mapUrl: "https://maps.app.goo.gl/U8QJp82u5wktP7rT9",
