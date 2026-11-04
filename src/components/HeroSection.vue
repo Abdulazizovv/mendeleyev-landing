@@ -35,14 +35,10 @@
       "
     ></div>
 
-    <!-- ================= HERO CONTAINER ================= -->
-
     <div
       class="relative z-20 mx-auto flex min-h-[512px] max-w-[1280px] items-center px-8 max-[980px]:min-h-0 max-[980px]:flex-col max-[980px]:px-6 max-[640px]:px-5"
     >
-      <!-- ================= LEFT CONTENT ================= -->
       <div class="relative z-20">
-        <!-- QUOTE BADGE -->
         <div
           class="mb-7 inline-flex items-center transition-all duration-700 ease delay-[50ms] motion-reduce:transition-none"
           :class="
@@ -52,31 +48,23 @@
           "
         >
           <div
-            class="relative inline-flex max-w-full items-center overflow-hidden rounded-[12px] bg-[#f7f8fa] px-4 py-2.5 pr-10 shadow-[0_3px_12px_rgba(0,0,0,0.025)]"
+            class="inline-flex max-w-full items-center gap-2.5 rounded-lg border border-gray-200/80 bg-white/90 px-4 py-2.5 shadow-sm dark:border-white/10 dark:bg-white/[0.04]"
           >
+            <span class="h-5 w-[3px] shrink-0 rounded-full bg-red-500"></span>
+
             <span
-              class="whitespace-nowrap text-[16px] font-semibold leading-[1.35] tracking-[-0.3px] text-[#7d83a3] max-[480px]:whitespace-normal max-[480px]:text-[13px]"
+              class="text-[15px] font-medium leading-[1.4] tracking-[-0.2px] text-gray-500 dark:text-white/60 max-[480px]:text-[13px]"
             >
-              <span class="font-extrabold text-red-500">
+              <span class="font-semibold text-red-500">
                 “{{ t.hero.badgeStrong || t.hero.ctaSecondary }}”
               </span>
               {{ t.hero.eyebrow }}
             </span>
-
-            <!-- RED END -->
-            <span
-              class="absolute right-0 top-0 h-full w-[25px] rounded-r-[12px] bg-red-500"
-            >
-              <span
-                class="absolute -left-[11px] top-[-3px] h-[calc(100%+6px)] w-[24px] rounded-full bg-[#f7f8fa]"
-              ></span>
-            </span>
           </div>
         </div>
 
-        <!-- TITLE -->
         <h1
-          class="max-w-[650px] text-[clamp(36px,4.5vw,56px)] font-extrabold leading-[1.04] tracking-[-1.8px] text-ink dark:text-white transition-all duration-700 ease delay-[150ms] motion-reduce:transition-none"
+          class="max-w-[650px] text-[clamp(36px,4.3vw,55px)] font-bold leading-[1.08] tracking-[-1.6px] text-ink dark:text-white transition-all duration-700 ease delay-[150ms] motion-reduce:transition-none"
           :class="
             heroLoaded
               ? 'translate-y-0 opacity-100'
@@ -87,9 +75,8 @@
           {{ titleRest }}
         </h1>
 
-        <!-- DESCRIPTION -->
         <p
-          class="mt-6 max-w-125 text-[17px] leading-[1.65] text-gray-500 dark:text-white/60 transition-all duration-700 ease delay-[250ms] motion-reduce:transition-none"
+          class="mt-6 max-w-[520px] text-[16px] font-normal leading-[1.75] tracking-[-0.1px] text-gray-500 dark:text-white/60 transition-all duration-700 ease delay-[250ms] motion-reduce:transition-none"
           :class="
             heroLoaded
               ? 'translate-y-0 opacity-100'
@@ -99,7 +86,6 @@
           {{ t.hero.desc }}
         </p>
 
-        <!-- CTA -->
         <div
           class="mt-9 flex flex-wrap gap-[14px] transition-all duration-700 ease delay-[350ms] motion-reduce:transition-none"
           :class="
@@ -111,7 +97,7 @@
           <a
             href="#contact"
             @click.prevent="$emit('openContact')"
-            class="inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-red-800 via-red-700 to-red-600 px-25 py-6 text-[16px] font-semibold text-white shadow-[0_14px_30px_-12px_rgba(230,50,98,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:from-red-600 hover:via-red-500 hover:to-red-500 max-[640px]:w-full max-[640px]:px-6 max-[640px]:py-4.5"
+            class="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-red-800 via-red-700 to-red-600 px-25 py-6 text-[16px] font-semibold text-white shadow-[0_14px_30px_-12px_rgba(230,50,98,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:from-red-600 hover:via-red-500 hover:to-red-500 max-[640px]:w-full max-[640px]:px-6 max-[640px]:py-4.5"
           >
             <span>{{ t.hero.ctaPrimary }}</span>
 
@@ -119,10 +105,10 @@
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2.5"
+              stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="h-[20px] w-[25px] shrink-0"
+              class="h-5 w-5 shrink-0"
             >
               <path d="M5 12h14" />
               <path d="M13 6l6 6-6 6" />
@@ -130,7 +116,6 @@
           </a>
         </div>
 
-        <!-- STATS -->
         <div
           class="mt-14 flex flex-wrap gap-x-[38px] gap-y-6 transition-all duration-700 ease delay-[450ms] motion-reduce:transition-none"
           :class="
@@ -153,8 +138,6 @@
         </div>
       </div>
 
-      <!-- ================= RIGHT VISUAL ================= -->
-
       <div
         class="absolute right-[1.5%] top-0 z-10 h-full w-[56%] transition-all duration-[900ms] ease-out max-[980px]:relative max-[980px]:right-0 max-[980px]:mt-[-10px] max-[980px]:h-[470px] max-[980px]:w-full max-[640px]:h-[390px]"
         :class="
@@ -163,7 +146,6 @@
             : 'translate-x-5 scale-[0.97] opacity-0'
         "
       >
-        <!-- RAMKA WRAPPER -->
         <div
           class="absolute right-[4%] top-[1%] h-[96%] w-[420px] max-[1180px]:right-[2%] max-[1180px]:w-[400px] max-[980px]:right-1/2 max-[980px]:top-[3%] max-[980px]:h-[94%] max-[980px]:w-[380px] max-[980px]:translate-x-1/2 max-[640px]:w-[310px]"
         >
@@ -204,50 +186,78 @@
             ></div>
           </div>
 
+          <!-- EXPERIENCE CARD -->
+
           <div
-            class="absolute -left-[72px] top-[10px] z-30 flex items-center gap-3 rounded-[18px] border border-white/90 bg-white/92 px-3.5 py-3 shadow-[0_22px_45px_-14px_rgba(15,23,42,0.32),0_10px_28px_-12px_rgba(220,38,38,0.25),0_0_20px_rgba(239,68,68,0.10)] backdrop-blur-xl dark:border-white/10 dark:bg-[#10121d]/92 dark:shadow-[0_20px_45px_-15px_rgba(0,0,0,0.85),0_0_20px_rgba(239,68,68,0.06)] max-[640px]:-left-4 max-[640px]:top-[5px]"
+            class="absolute -left-[72px] top-[10px] z-30 flex items-center gap-3 rounded-[14px] border border-slate-200/90 bg-white/95 px-3.5 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.10)] backdrop-blur-md dark:border-white/10 dark:bg-[#10121d]/95 dark:shadow-[0_8px_24px_rgba(0,0,0,0.30)] max-[640px]:-left-2 max-[640px]:top-[5px] max-[640px]:gap-2 max-[640px]:rounded-[11px] max-[640px]:px-2.5 max-[640px]:py-2"
           >
             <div
-              class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-red-300/70 bg-gradient-to-br from-white via-red-50 to-red-100 text-[19px] shadow-[0_5px_14px_rgba(239,68,68,0.14),inset_0_1px_0_rgba(255,255,255,0.95)] dark:border-red-500/40 dark:from-red-500/20 dark:via-red-500/15 dark:to-red-700/15 dark:shadow-none"
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-400 max-[640px]:h-7 max-[640px]:w-7 max-[640px]:rounded-[8px]"
             >
-              🎓
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-[22px] w-[22px] max-[640px]:h-[16px] max-[640px]:w-[16px]"
+              >
+                <path d="M12 3 3 8l9 5 9-5-9-5Z" />
+                <path d="M7 10.3v5.2c2.9 2.2 7.1 2.2 10 0v-5.2" />
+                <path d="M21 8v6" />
+              </svg>
             </div>
 
-            <div class="leading-[1.15]">
+            <div class="leading-[1.3]">
               <div
-                class="text-[15px] font-extrabold text-[#111827] dark:text-white"
+                class="text-[14px] font-bold tracking-[-0.2px] text-slate-900 dark:text-white max-[640px]:text-[11px]"
               >
-                20+ Yillik
+                20+ yillik
               </div>
 
               <div
-                class="mt-[4px] text-[11px] font-medium text-slate-500 dark:text-white/50"
+                class="mt-1 text-[11px] font-medium text-slate-500 dark:text-white/55 max-[640px]:mt-0.5 max-[640px]:text-[9px]"
               >
                 Ta'limdagi tajriba
               </div>
             </div>
           </div>
 
+          <!-- QUALITY EDUCATION CARD -->
+
           <div
-            class="absolute -right-[72px] bottom-[18px] z-30 flex items-center gap-3 rounded-[18px] border border-white/90 bg-white/92 px-3.5 py-3 shadow-[0_22px_45px_-14px_rgba(15,23,42,0.32),0_10px_28px_-12px_rgba(220,38,38,0.25),0_0_20px_rgba(239,68,68,0.10)] backdrop-blur-xl dark:border-white/10 dark:bg-[#10121d]/92 dark:shadow-[0_20px_45px_-15px_rgba(0,0,0,0.85),0_0_20px_rgba(239,68,68,0.06)] max-[640px]:-right-4 max-[640px]:bottom-[10px]"
+            class="absolute -right-[72px] bottom-[18px] z-30 flex items-center gap-3 rounded-[14px] border border-slate-200/90 bg-white/95 px-3.5 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.10)] backdrop-blur-md dark:border-white/10 dark:bg-[#10121d]/95 dark:shadow-[0_8px_24px_rgba(0,0,0,0.30)] max-[640px]:-right-2 max-[640px]:bottom-[10px] max-[640px]:gap-2 max-[640px]:rounded-[11px] max-[640px]:px-2.5 max-[640px]:py-2"
           >
             <div
-              class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-red-300/70 bg-gradient-to-br from-white via-red-50 to-red-100 text-[19px] shadow-[0_5px_14px_rgba(239,68,68,0.14),inset_0_1px_0_rgba(255,255,255,0.95)] dark:border-red-500/40 dark:from-red-500/20 dark:via-red-500/15 dark:to-red-700/15 dark:shadow-none"
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-400 max-[640px]:h-7 max-[640px]:w-7 max-[640px]:rounded-[8px]"
             >
-              🏆
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-[22px] w-[22px] max-[640px]:h-[16px] max-[640px]:w-[16px]"
+              >
+                <path
+                  d="M12 3.5 14.6 9l6 .9-4.3 4.2 1 6-5.3-2.8-5.3 2.8 1-6-4.3-4.2 6-.9L12 3.5Z"
+                />
+              </svg>
             </div>
 
-            <div class="leading-[1.15]">
+            <div class="leading-[1.3]">
               <div
-                class="text-[15px] font-extrabold text-[#111827] dark:text-white"
+                class="text-[14px] font-bold tracking-[-0.2px] text-slate-900 dark:text-white max-[640px]:text-[11px]"
               >
-              Sifatli ta'lim
+                Sifatli ta'lim
               </div>
 
               <div
-                class="mt-[4px] text-[11px] font-medium text-slate-500 dark:text-white/50"
+                class="mt-1 text-[11px] font-medium text-slate-500 dark:text-white/55 max-[640px]:mt-0.5 max-[640px]:text-[9px]"
               >
-              Yorqin kelajak!
+                Yorqin kelajak
               </div>
             </div>
           </div>

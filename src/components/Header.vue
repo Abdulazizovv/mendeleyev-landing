@@ -26,9 +26,9 @@
           />
         </span>
 
-        <span class="flex flex-col leading-[1.15] min-w-0">
+        <span class="flex flex-col leading-none min-w-0">
           <strong
-            class="font-[Montserrat] text-2xl max-[480px]:text-lg max-[380px]:text-base font-extrabold leading-[0.85] tracking-[-0.5px] text-red-950 dark:text-white"
+            class="font-bold text-[22px] max-[480px]:text-[17px] max-[380px]:text-[15px] leading-none tracking-[0.5px] text-red-950 dark:text-white"
           >
             MENDELEYEV
           </strong>
