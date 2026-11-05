@@ -16,8 +16,8 @@ export const site = {
     encodeURIComponent("Qo'qon shahri, Turon ko'chasi, 42-uy") +
     "&output=embed",
   social: {
-    telegram: "https://t.me/Mendeleyev_qoqon_lc",
-    instagram: "https://instagram.com/mendeleyev_kokand",
+    telegram: "https://t.me/mendeleyev_markazi_NTM",
+    instagram: "https://instagram.com/mendeleyev_ntm",
     youtube: "https://youtube.com/@mendeleyev_markaz",
   },
 };
