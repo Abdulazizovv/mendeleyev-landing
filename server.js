@@ -262,16 +262,180 @@ function buildStatsMessage() {
 }
 
 // ============================================================
+// YANGILIKLAR (data/news.json + data/news-images/)
+// ============================================================
+// Yangiliklar botdan qo'shiladi, saytdagi "Yangiliklar" bo'limi
+// GET /api/news orqali o'qiydi. Rasmlar /api/news-images/<fayl> orqali beriladi.
+// Ikkalasi ham DATA_DIR ichida (Docker: landing_data volume) — restartda yo'qolmaydi.
+
+const NEWS_FILE = path.join(DATA_DIR, "news.json");
+const NEWS_DIR = path.join(DATA_DIR, "news-images");
+const NEWS_MAX_ITEMS = 20; // shundan oshsa eng eskisi (rasmi bilan) o'chadi
+const NEWS_TITLE_MAX = 100;
+const NEWS_DESC_MAX = 600;
+const NEWS_IMAGE_MAX_BYTES = 5 * 1024 * 1024; // 5 MB
+const IMAGE_EXT_BY_MIME = {
+  "image/jpeg": "jpg",
+  "image/png": "png",
+  "image/webp": "webp",
+};
+
+fs.mkdirSync(NEWS_DIR, { recursive: true });
+
+// Foydalanuvchiga ko'rsatsa bo'ladigan xatolar
+class NewsError extends Error {}
+
+let news = [];
+try {
+  const raw = JSON.parse(fs.readFileSync(NEWS_FILE, "utf8"));
+  if (Array.isArray(raw?.items)) news = raw.items;
+} catch {
+  // fayl hali yo'q yoki buzilgan — bo'sh ro'yxatdan boshlanadi
+}
+
+function saveNewsNow() {
+  try {
+    const tmp = `${NEWS_FILE}.tmp`;
+    fs.writeFileSync(tmp, JSON.stringify({ items: news }));
+    fs.renameSync(tmp, NEWS_FILE);
+  } catch (error) {
+    console.error("Yangiliklarni saqlashda xatolik:", error.message || error);
+    throw error;
+  }
+}
+
+function removeNewsImage(fileName) {
+  if (!fileName) return;
+  fs.promises
+    .unlink(path.join(NEWS_DIR, path.basename(fileName)))
+    .catch(() => {});
+}
+
+function addNews({ title, desc, image }) {
+  const item = {
+    id: crypto.randomBytes(6).toString("hex"),
+    title,
+    desc,
+    image,
+    date: dayKey(), // Toshkent vaqti bo'yicha YYYY-MM-DD
+    createdAt: Date.now(),
+  };
+  news.unshift(item);
+  while (news.length > NEWS_MAX_ITEMS) removeNewsImage(news.pop().image);
+  saveNewsNow();
+  return item;
+}
+
+function deleteNews(id) {
+  const index = news.findIndex((item) => item.id === id);
+  if (index === -1) return null;
+  const [item] = news.splice(index, 1);
+  removeNewsImage(item.image);
+  saveNewsNow();
+  return item;
+}
+
+// Telegramdan kelgan rasm (siqilgan foto yoki rasm-fayl) haqida ma'lumot
+function pickIncomingImage(msg) {
+  if (Array.isArray(msg.photo) && msg.photo.length) {
+    const biggest = msg.photo[msg.photo.length - 1];
+    return {
+      fileId: biggest.file_id,
+      ext: "jpg",
+      size: biggest.file_size || 0,
+    };
+  }
+  const doc = msg.document;
+  if (doc && IMAGE_EXT_BY_MIME[doc.mime_type]) {
+    return {
+      fileId: doc.file_id,
+      ext: IMAGE_EXT_BY_MIME[doc.mime_type],
+      size: doc.file_size || 0,
+    };
+  }
+  return null;
+}
+
+async function downloadTelegramImage({ fileId, ext, size }) {
+  if (size > NEWS_IMAGE_MAX_BYTES) {
+    throw new NewsError("Rasm hajmi 5 MB dan oshmasligi kerak.");
+  }
+
+  const { ok, data } = await telegramRequest("getFile", { file_id: fileId });
+  const filePath = data?.result?.file_path;
+  if (!ok || !filePath) {
+    throw new NewsError("Rasmni Telegramdan olib bo‘lmadi.");
+  }
+
+  // DIQQAT: bu URL ichida bot tokeni bor — hech qachon logga yozilmaydi.
+  const response = await fetch(
+    `${TELEGRAM_BASE}/file/bot${BOT_TOKEN}/${filePath}`,
+    {
+      signal: AbortSignal.timeout(30000),
+    }
+  );
+  if (!response.ok) {
+    throw new NewsError("Rasmni Telegramdan yuklab bo‘lmadi.");
+  }
+
+  const buffer = Buffer.from(await response.arrayBuffer());
+  if (buffer.length > NEWS_IMAGE_MAX_BYTES) {
+    throw new NewsError("Rasm hajmi 5 MB dan oshmasligi kerak.");
+  }
+
+  const fileName = `${Date.now()}-${crypto
+    .randomBytes(4)
+    .toString("hex")}.${ext}`;
+  await fs.promises.writeFile(path.join(NEWS_DIR, fileName), buffer);
+  return fileName;
+}
+
+// ============================================================
 // TELEGRAM BOT MENYUSI (long polling)
 // ============================================================
 
 const STATS_BUTTON = "📊 Statistika";
+const NEWS_ADD_BUTTON = "📰 Yangilik qo‘shish";
+const NEWS_LIST_BUTTON = "🗂 Yangiliklar";
+const NEWS_CANCEL_BUTTON = "❌ Bekor qilish";
 
 const MAIN_KEYBOARD = {
-  keyboard: [[{ text: STATS_BUTTON }]],
+  keyboard: [
+    [{ text: STATS_BUTTON }],
+    [{ text: NEWS_ADD_BUTTON }, { text: NEWS_LIST_BUTTON }],
+  ],
   resize_keyboard: true,
   is_persistent: true,
 };
+
+const CANCEL_KEYBOARD = {
+  keyboard: [[{ text: NEWS_CANCEL_BUTTON }]],
+  resize_keyboard: true,
+  is_persistent: true,
+};
+
+// Yangilik qo'shish jarayoni: chatId -> { step: "title" | "desc" | "photo", title, desc }
+const newsDrafts = new Map();
+
+const sendText = (chatId, text, extra = {}) =>
+  telegramRequest("sendMessage", { chat_id: chatId, text, ...extra });
+
+const newsDeleteMarkup = (id) => ({
+  inline_keyboard: [[{ text: "🗑 O‘chirish", callback_data: `news:del:${id}` }]],
+});
+
+const newsConfirmMarkup = (id) => ({
+  inline_keyboard: [
+    [
+      { text: "✅ Ha, o‘chirish", callback_data: `news:yes:${id}` },
+      { text: "↩️ Yo‘q", callback_data: `news:no:${id}` },
+    ],
+  ],
+});
+
+function formatNewsMessage(item) {
+  return [`📰 ${item.title}`, `🗓 ${item.date}`, "", item.desc].join("\n");
+}
 
 const REFRESH_MARKUP = {
   inline_keyboard: [[{ text: "🔄 Yangilash", callback_data: "stats:refresh" }]],
@@ -303,26 +467,223 @@ async function handleLeadStatus(query, done) {
   });
 }
 
+async function handleNewsDraftStep(msg, draft) {
+  const chatId = msg.chat.id;
+  const text = (msg.text || "").trim();
+
+  if (draft.step === "title") {
+    if (!text) {
+      await sendText(chatId, "Iltimos, sarlavhani matn ko‘rinishida yuboring.");
+      return;
+    }
+    if (text.length > NEWS_TITLE_MAX) {
+      await sendText(
+        chatId,
+        `Sarlavha juda uzun (${text.length} belgi). ${NEWS_TITLE_MAX} belgidan oshmasligi kerak — qisqartirib qayta yuboring.`
+      );
+      return;
+    }
+    draft.title = text;
+    draft.step = "desc";
+    await sendText(
+      chatId,
+      `2/3 — Endi yangilik tavsifini (description) yuboring.\n\nEng ko‘pi bilan ${NEWS_DESC_MAX} belgi.`
+    );
+    return;
+  }
+
+  if (draft.step === "desc") {
+    if (!text) {
+      await sendText(chatId, "Iltimos, tavsifni matn ko‘rinishida yuboring.");
+      return;
+    }
+    if (text.length > NEWS_DESC_MAX) {
+      await sendText(
+        chatId,
+        `Tavsif juda uzun (${text.length} belgi). ${NEWS_DESC_MAX} belgidan oshmasligi kerak — qisqartirib qayta yuboring.`
+      );
+      return;
+    }
+    draft.desc = text;
+    draft.step = "photo";
+    await sendText(chatId, "3/3 — Endi yangilik rasmini yuboring 🖼");
+    return;
+  }
+
+  // draft.step === "photo"
+  const image = pickIncomingImage(msg);
+  if (!image) {
+    await sendText(
+      chatId,
+      "Iltimos, rasm yuboring (galereyadan rasm tanlang). Bekor qilish uchun pastdagi tugmani bosing."
+    );
+    return;
+  }
+
+  // Qoralamani darhol olib tashlaymiz: albom bo'lib bir nechta rasm kelsa, faqat birinchisi ishlaydi.
+  newsDrafts.delete(chatId);
+
+  try {
+    const fileName = await downloadTelegramImage(image);
+    const item = addNews({
+      title: draft.title,
+      desc: draft.desc,
+      image: fileName,
+    });
+
+    await sendText(chatId, "✅ Yangilik saytga qo‘shildi!", {
+      reply_markup: MAIN_KEYBOARD,
+    });
+    await sendText(chatId, formatNewsMessage(item), {
+      reply_markup: newsDeleteMarkup(item.id),
+    });
+  } catch (error) {
+    console.error("Yangilik qo'shishda xatolik:", error.message || error);
+    newsDrafts.set(chatId, draft); // rasm bosqichida qolamiz — qayta yuborsa bo'ladi
+    const reason =
+      error instanceof NewsError
+        ? error.message
+        : "Rasmni saqlashda xatolik yuz berdi.";
+    await sendText(
+      chatId,
+      `⚠️ ${reason}\n\nRasmni qayta yuboring yoki bekor qiling.`
+    );
+  }
+}
+
+async function sendNewsList(chatId) {
+  if (!news.length) {
+    await sendText(
+      chatId,
+      "Hozircha yangiliklar yo‘q. “📰 Yangilik qo‘shish” tugmasi orqali birinchisini qo‘shing.",
+      { reply_markup: MAIN_KEYBOARD }
+    );
+    return;
+  }
+
+  const shown = news.slice(0, 10);
+  await sendText(
+    chatId,
+    `🗂 Saytdagi yangiliklar: jami ${news.length} ta${
+      news.length > shown.length ? ` (oxirgi ${shown.length} tasi pastda)` : ""
+    }`,
+    { reply_markup: MAIN_KEYBOARD }
+  );
+  for (const item of shown) {
+    await sendText(chatId, formatNewsMessage(item), {
+      reply_markup: newsDeleteMarkup(item.id),
+    });
+  }
+}
+
+async function handleNewsCallback(query) {
+  const chatId = query.message.chat.id;
+  const messageId = query.message.message_id;
+  const [, action, id] = String(query.data).split(":");
+
+  let toast = "";
+
+  if (action === "del") {
+    await telegramRequest("editMessageReplyMarkup", {
+      chat_id: chatId,
+      message_id: messageId,
+      reply_markup: newsConfirmMarkup(id),
+    });
+    toast = "O‘chirishni tasdiqlang";
+  } else if (action === "no") {
+    await telegramRequest("editMessageReplyMarkup", {
+      chat_id: chatId,
+      message_id: messageId,
+      reply_markup: newsDeleteMarkup(id),
+    });
+  } else if (action === "yes") {
+    let removed = null;
+    try {
+      removed = deleteNews(id);
+    } catch {
+      toast = "Xatolik yuz berdi, qayta urinib ko‘ring";
+    }
+    if (removed) {
+      await telegramRequest("editMessageText", {
+        chat_id: chatId,
+        message_id: messageId,
+        text: `🗑 O‘chirildi: ${removed.title}`,
+      });
+      toast = "Saytdan o‘chirildi";
+    } else if (!toast) {
+      await telegramRequest("editMessageText", {
+        chat_id: chatId,
+        message_id: messageId,
+        text: "Bu yangilik allaqachon o‘chirilgan.",
+      });
+    }
+  }
+
+  await telegramRequest("answerCallbackQuery", {
+    callback_query_id: query.id,
+    ...(toast ? { text: toast } : {}),
+  });
+}
+
 async function handleUpdate(update) {
   if (update.message) {
     const msg = update.message;
     if (!isAdminChat(msg.chat?.id)) return;
 
+    const chatId = msg.chat.id;
     const text = (msg.text || "").trim();
 
-    if (text === "/start" || text === "/menu") {
-      await telegramRequest("sendMessage", {
-        chat_id: msg.chat.id,
-        text: "Assalomu alaykum! Statistikani ko‘rish uchun pastdagi tugmani bosing 👇",
+    // Yangilik qo'shishni bekor qilish
+    if (text === NEWS_CANCEL_BUTTON || text === "/cancel") {
+      const hadDraft = newsDrafts.delete(chatId);
+      await sendText(chatId, hadDraft ? "Bekor qilindi." : "Menyu 👇", {
         reply_markup: MAIN_KEYBOARD,
       });
       return;
     }
 
+    const isMenuAction =
+      text === "/start" ||
+      text === "/menu" ||
+      text === STATS_BUTTON ||
+      text.startsWith("/stats") ||
+      text === NEWS_ADD_BUTTON ||
+      text === NEWS_LIST_BUTTON;
+
+    if (isMenuAction) {
+      // Menyu tugmasi bosilsa, tugallanmagan yangilik qoralamasi tashlanadi
+      newsDrafts.delete(chatId);
+    } else if (newsDrafts.has(chatId)) {
+      await handleNewsDraftStep(msg, newsDrafts.get(chatId));
+      return;
+    }
+
+    if (text === "/start" || text === "/menu") {
+      await sendText(
+        chatId,
+        "Assalomu alaykum! Statistikani ko‘rish yoki yangilik qo‘shish uchun pastdagi tugmalardan foydalaning 👇",
+        { reply_markup: MAIN_KEYBOARD }
+      );
+      return;
+    }
+
+    if (text === NEWS_ADD_BUTTON) {
+      newsDrafts.set(chatId, { step: "title" });
+      await sendText(
+        chatId,
+        `📰 Yangilik qo‘shish\n\n1/3 — Yangilik sarlavhasini (title) yuboring.\n\nEng ko‘pi bilan ${NEWS_TITLE_MAX} belgi.`,
+        { reply_markup: CANCEL_KEYBOARD }
+      );
+      return;
+    }
+
+    if (text === NEWS_LIST_BUTTON) {
+      await sendNewsList(chatId);
+      return;
+    }
+
     if (text === STATS_BUTTON || text.startsWith("/stats")) {
-      await telegramRequest("sendMessage", {
-        chat_id: msg.chat.id,
-        text: buildStatsMessage(),
+      await sendText(chatId, buildStatsMessage(), {
         reply_markup: REFRESH_MARKUP,
       });
     }
@@ -342,6 +703,11 @@ async function handleUpdate(update) {
 
     if (query.data === "lead:done" || query.data === "lead:undo") {
       await handleLeadStatus(query, query.data === "lead:done");
+      return;
+    }
+
+    if (typeof query.data === "string" && query.data.startsWith("news:")) {
+      await handleNewsCallback(query);
       return;
     }
 
@@ -423,6 +789,35 @@ app.post("/api/visit", (req, res) => {
   }
   res.json({ ok: true });
 });
+
+// ============================================================
+// YANGILIKLAR (sayt uchun ochiq API)
+// ============================================================
+
+app.get("/api/news", (_req, res) => {
+  res.set("Cache-Control", "no-cache");
+  res.json({
+    items: news.map(({ id, title, desc, image, date }) => ({
+      id,
+      title,
+      desc,
+      image,
+      date,
+    })),
+  });
+});
+
+// Fayl nomlari tasodifiy va o'zgarmas, shuning uchun uzoq keshlash xavfsiz.
+app.use(
+  "/api/news-images",
+  express.static(NEWS_DIR, {
+    maxAge: "30d",
+    immutable: true,
+    index: false,
+    dotfiles: "deny",
+    setHeaders: (res) => res.set("X-Content-Type-Options", "nosniff"),
+  })
+);
 
 // ============================================================
 // YANGI ARIZA QABUL QILISH

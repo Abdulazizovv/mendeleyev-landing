@@ -17,6 +17,7 @@
         @open-contact="openContactModal"
       />
       <Partnerlogosmarquee :lang="lang" />
+      <NewsSection :lang="lang" />
       <ResultsSection :t="t" :lang="lang" :images="resultsImages" />
       <AdvantagesSection :t="t" :lang="lang" :advantages="advantages" />
       <ProblemsSection :t="t" :lang="lang" :problems="problems" />
@@ -100,6 +101,7 @@ import Footer from "./components/Footer.vue";
 import ContactModal from "./components/ContactModal.vue";
 import BranchesSection from "./components/BranchesSection.vue";
 import TeamGallery from "./components/TeamGallery.vue";
+import NewsSection from "./components/NewsSection.vue";
 //for test
 
 import {
