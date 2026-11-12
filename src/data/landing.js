@@ -603,9 +603,9 @@ export const team = [
   {
     initials: "NI",
     name: {
-      uz: "Nozimjon Ismoilov",
-      ru: "Нозимжон Исмоилов",
-      en: "Nozimjon Ismoilov",
+      uz: "Nozimjon Rasulov",
+      ru: "Нозимжон Расулов",
+      en: "Nozimjon Rasulov",
     },
     role: {
       uz: "Mendeleyev Danğara va Tillar markazi direktori",
@@ -631,20 +631,6 @@ export const team = [
     image: "/images/team/Husniddin Ismoilov.webp",
     imageWidth: "210px",
     imageHeight: "166px",
-  },
-  {
-    initials: "EJ",
-    name: {
-      uz: "Erkinov Jasurbek",
-      ru: "Эркинов Жасурбек",
-      en: "Erkinov Jasurbek",
-    },
-    role: {
-      uz: "IT Academy direktori",
-      ru: "Директор IT Academy",
-      en: "Director of IT Academy",
-    },
-    image: "/images/team/Jasurbek Erkinov.webp",
   },
   {
     initials: "XM",
@@ -675,6 +661,20 @@ export const team = [
       en: "Director of Mendeleyev Buvayda School and Learning Center",
     },
     image: "/images/team/Rahimov Yorqinjon.webp",
+  },
+  {
+    initials: "EJ",
+    name: {
+      uz: "Erkinov Jasurbek",
+      ru: "Эркинов Жасурбек",
+      en: "Erkinov Jasurbek",
+    },
+    role: {
+      uz: "IT Academy direktori",
+      ru: "Директор IT Academy",
+      en: "Director of IT Academy",
+    },
+    image: "/images/team/Jasurbek Erkinov.webp",
   },
   {
     initials: "AA",
@@ -717,6 +717,22 @@ export const team = [
       en: "Director of Mendeleyev IT School",
     },
     image: "/images/team/Nozimova Nasiba.webp",
+    imageWidth: "200px",
+    imageHeight: "166px",
+  },
+  {
+    initials: "SM",
+    name: {
+      uz: "Mamatova Şahloxon",
+      ru: "Маматова Шахлохон",
+      en: "Mamatova Shahloxon",
+    },
+    role: {
+      uz: "Mendeleyev boğçası direktori",
+      ru: "Директор детского сада Mendeleyev",
+      en: "Director of Mendeleyev Kindergarten",
+    },
+    image: "/images/team/Shahloxon Mamatova.webp",
     imageWidth: "200px",
     imageHeight: "166px",
   },
@@ -1058,7 +1074,7 @@ export const schools = [
     phoneRaw: "+998772537788",
     telegram: "https://t.me/mendeleyevbogchasi",
     instagram: "https://instagram.com/mendeleyev_bogchasi",
-    mapUrl: "https://maps.app.goo.gl/22UU6e7rMUFYNLmE6",
+    mapUrl: "https://maps.app.goo.gl/9xZoeA1jRYrJFSrW6",
     images: [
       "/images/filial/mendeleyev bog'cha.webp",
       "/images/filial/mendeleyev bog'cha2.webp",
